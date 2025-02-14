@@ -24,21 +24,9 @@
 - **Go global in minutes**
     - Easily deploy your application in multiple regions around the world with just a few clicks. This means you can provide lower latency and a better experience for your customers at minimal cost.
 
-## Design principles AWS in the cloud
-
-- Perform operations as code
-- Make frequent, small
-- reversible changes
-- Refine operations procedures frequently
-- Anticipate failure
-- learn from ops failures
-
 ## AWS Shared Responsibility Model
 
 ![Image1](./images/img1.png)
-
-![Image2](./images/img2.png)
-
 
 ## Amazon EC2 Instance Types
 
@@ -57,12 +45,6 @@
 - **Storage optimized instances**:
     - High sequential read/write access.
     - Great for distributed file systems and data warehousing.
-
-
-## AWS EC2 Instance Store
-
-An *instance store* provides temporary block-level storage for your instance. This storage is located on disks that are physically attached to the host computer. Instance store is ideal for temporary storage of information that changes frequently, such as buffers, caches, scratch data, and other temporary content. It can also be used to store temporary data that you replicate across a fleet of instances, such as a load-balanced pool of web servers.
-
 
 ## Amazon EC2 Pricing
 
