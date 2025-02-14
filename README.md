@@ -56,32 +56,30 @@
 
 ### Reserved instances
 
+- Ideal for **steady state** applications
 - Standard Reserved Instance
+    - Requires you to specify:
+        - EC2 instance type and size
+        - Platform description (Operating System)
+        - AWS region  
 - Convertible Reserved Instance
+    - If you need different EC2 instance types
+    - If you want to run your EC2 instances in different availability zones 
 
 ### EC2 Instance saving plans
 
-- Commitment Duration and Flexibility
-- Instance Family and Sizes
-- Instance Flexibility
-- Regional and Zonal Options
-- Shared Usage
-- 1-year or 3-year term
+- Can reduce your EC2 instance costs when you make an **hourly** spend commitment to an instance family and Region for a 1-year or 3-year term
+- Offers savings of up to **72 percent** compared to On-Demand rates
 
 ### Spot instance
 
-- Interruptions are possible
-- %90 discount
+- Uses unused Amazon EC2 computing capacity and offer you cost savings at up to 90% off of On-Demand prices
+- Useful for applications that can withstand interruptions
 
 ### Dedicated host
 
-![Image3](./images/img3.png)
-
-- Isolation and Compliance
-- Instance Placement Control
-- Instance Type Flexibility
-- Cost Predictability
-- Visibility and Reporting
+- Physical servers fully dedicated to you use
+- Of all the Amazon EC2 options, Dedicated Hosts are the most expensive
 
 
 ## AWS Services
