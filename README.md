@@ -68,7 +68,7 @@
 
 ### EC2 Instance saving plans
 
-- Can reduce your EC2 instance costs when you make an **hourly** spend commitment to an instance family and Region for a 1-year or 3-year term
+- Can reduce your EC2 instance costs when you make an **hourly** commitment to an instance family and Region for a 1-3 year term
 - Offers savings of up to **72 percent** compared to On-Demand rates
 
 ### Spot instance
