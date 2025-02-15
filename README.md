@@ -81,6 +81,30 @@
 - Physical servers fully dedicated to you use
 - Of all the Amazon EC2 options, Dedicated Hosts are the most expensive
 
+## Amazon EC2 Scalability
+
+- Scalability involves beginning with **only** the resources you **need** and designing your architecture to **automatically** respond to changing demand by **scaling out** or **in**
+- As a result, you pay for only the resources you use
+
+### Amazon EC2 Auto Scaling:
+- Amazon EC2 Auto Scaling enables you to automatically **add** or **remove** Amazon EC2 instances in response to changing application demand
+- Within Amazon EC2 Auto Scaling, you can use two approaches
+    - **Dynamic** scaling: Dynamic scaling responds to changing demand
+    - **Predictive** scaling: Predictive scaling automatically schedules the right number of Amazon EC2 instances based on predicted demand
+- When launching an application on Amazon EC2 instances, configure the Auto Scaling group. It includes 3 capacity settings
+    - Minimum capacity: The **initial** number of EC2 instances launched when the Auto Scaling group is created
+    - Desired capacity: Represents the number of instances the group attempts to **maintain**. If not explicitly set, it defaults to the minimum capacity
+    - Maximum capacity: The **upper** limit on the number of EC2 instances the group can scale out to in response to changing demands
+ 
+## Elastic Load Balancing 
+
+- An AWS service that automatically distributes incoming application traffic across multiple resources, such as Amazon EC2 instances
+- Load Balancer Role:
+    - Acts as a single point of contact for incoming traffic, directing requests to the appropriate EC2 instances in an Auto Scaling group
+    - Ensures that workloads are evenly distributed across multiple instances, preventing any single instance from being overwhelmed
+- Integration with Amazon EC2 Auto Scaling:
+    - As you add or remove Amazon EC2 instances in response to the amount of incoming traffic, these requests route to the load balancer first
+    - Works alongside Amazon EC2 Auto Scaling to enhance application performance and availability
 
 ## AWS Services
 
