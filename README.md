@@ -1,14 +1,17 @@
 # AWS Certified Cloud Practitioner Certification - My Notes
 
-## Deployment Models for Cloud Computing
 
+
+
+## Deployment Models for Cloud Computing
 - Cloud-Based Deployment
 - On-Premises Deployment
 - Hybrid Deployment
 
 
-## Benefits of Cloud Computing
 
+
+## Benefits of Cloud Computing
 - **Trade upfront/capital(CAPEX) expense for/with variable/operational(OPEX) expense**
     - Instead of having to invest heavily in data centers and servers before you know how you’re going to use them, you can pay only when you consume computing resources, and pay only for how much you consume.
 - **Stop spending money to run and maintain data centers**
@@ -24,12 +27,16 @@
 - **Go global in minutes**
     - Easily deploy your application in multiple regions around the world with just a few clicks. This means you can provide lower latency and a better experience for your customers at minimal cost.
 
-## AWS Shared Responsibility Model
 
+
+
+## AWS Shared Responsibility Model
 ![Image1](./images/img1.png)
 
-## Amazon EC2 Instance Types
 
+
+
+## Amazon EC2 Instance Types
 - **General Purpose instances**:
     - Balanced computing, memory, and networking.
     - Suitable for web servers, dev environments, and medium databases.
@@ -46,16 +53,17 @@
     - High sequential read/write access.
     - Great for distributed file systems and data warehousing.
 
+
+
+
 ## Amazon EC2 Pricing
 
 ### On-Demand
-
 - It is ideal for short-term, irregular workloads that cannot be interrupted
 - No upfront costs or minimum contract apply
 - Pay-as-you-go pricing model
 
 ### Reserved instances
-
 - Ideal for **steady state** applications
 - Standard Reserved Instance
     - Requires you to specify:
@@ -67,22 +75,21 @@
     - If you want to run your EC2 instances in different availability zones 
 
 ### EC2 Instance saving plans
-
 - Can reduce your EC2 instance costs when you make an **hourly** commitment to an instance family and Region for a 1-3 year term
 - Offers savings of up to **72 percent** compared to On-Demand rates
 
 ### Spot instance
-
 - Uses unused Amazon EC2 computing capacity and offer you cost savings at up to 90% off of On-Demand prices
 - Useful for applications that can withstand interruptions
 
 ### Dedicated host
-
 - Physical servers fully dedicated to you use
 - Of all the Amazon EC2 options, Dedicated Hosts are the most expensive
 
-## Amazon EC2 Scalability
 
+
+
+## Amazon EC2 Scalability
 - Scalability involves beginning with **only** the resources you **need** and designing your architecture to **automatically** respond to changing demand by **scaling out** or **in**
 - As a result, you pay for only the resources you use
 
@@ -95,19 +102,111 @@
     - Minimum capacity: The **initial** number of EC2 instances launched when the Auto Scaling group is created
     - Desired capacity: Represents the number of instances the group attempts to **maintain**. If not explicitly set, it defaults to the minimum capacity
     - Maximum capacity: The **upper** limit on the number of EC2 instances the group can scale out to in response to changing demands
- 
-## Elastic Load Balancing 
 
+
+
+
+## Elastic Load Balancing 
 - An AWS service that automatically distributes incoming application traffic across multiple resources, such as Amazon EC2 instances
 - Load Balancer Role:
-    - Acts as a single point of contact for incoming traffic, directing requests to the appropriate EC2 instances in an Auto Scaling group
+    - Acts as a single point of contact for incoming traffic
     - Ensures that workloads are evenly distributed across multiple instances, preventing any single instance from being overwhelmed
 - Integration with Amazon EC2 Auto Scaling:
-    - As you add or remove Amazon EC2 instances in response to the amount of incoming traffic, these requests route to the load balancer first
+    - As you add or remove Amazon EC2 instances in response to the amount of incoming traffic, it routes to the load balancer first
     - Works alongside Amazon EC2 Auto Scaling to enhance application performance and availability
 
-## AWS Services
 
+
+
+## Monolithic Applications VS Microservices
+- Applications are made of multiple components
+    - The components communicate with each other to transmit data, fulfill requests, and keep the application running.
+  
+### Monolithic Applications
+- Composed of tightly coupled components (e.g., databases, servers, UI, business logic)
+- Failure in one component can lead to failure of other components or the entire application
+- To help maintain application availability when a single component fails, you can design your application through a microservices approach
+
+### Microservices
+- Components are loosely coupled
+- Failure in one component does not bring down the entire application
+- AWS services that support microservices:
+    - Amazon **SNS** – Enables event-driven messaging
+    - Amazon **SQS** – Manages message queues for decoupling services
+
+
+
+
+## Amazon Simple Notification Service (Amazon SNS)
+- Amazon SNS is a publish/subscribe service --> A publisher publishes messages to subscribers
+- Allows applications to send messages to multiple subscribers (e.g., email, SMS, Lambda, SQS) simultaneously
+
+
+
+
+## Amazon Simple Queue Service (Amazon SQS)
+- Using Amazon SQS, you can send, store, and receive messages between software components, without losing messages or requiring other services to be available
+- In Amazon SQS
+    - An application sends messages into a queue
+    - A user or service retrieves a message from the queue, processes it, and then deletes it from the queue
+
+
+
+
+## Additional Compute Services
+
+### 1. Serverless Services
+- Serverless computing means that you don’t manage or see the underlying infrastructure hosting your application
+- Instead AWS fully manages provisioning, scaling, availability, and maintenance
+- Example:
+    - AWS Lambda
+  
+### 2. Continer Services 
+- If you’re not ready for serverless computing or need access to the underlying environment, but still want efficiency and portability
+- Containers provide you with a standard way to **package** your application's code and dependencies into a **single** object
+- A container in this case is a **Docker** container
+- Example:
+    - Amazon ECS (Elastic Container Service)
+        - A highly scalable, high-performance container management system that enables you to run and scale containerized applications on AWS
+        - Supports Docker containers
+        - Allows API calls to launch and stop Docker-enabled applications 
+    - Amazon EKS (Elastic Kubernetes Service)
+        - Fully managed service that you can use to run Kubernetes on AWS  
+
+### Choosing the Right AWS Compute Service
+- 1. Amazon EC2 (Elastic Compute Cloud)
+    - Best for hosting traditional applications
+    - Provides full access to the underlying OS (Linux or Windows)
+- 2. AWS Lambda (Serverless)
+    - Best for short-running functions, service-oriented, or event-driven applications
+    - No need to manage servers or the underlying environment
+- 3. Running Containers on AWS
+  - First, choose your orchestration tool:
+      - Amazon ECS – Simpler, AWS-native container orchestration
+      - Amazon EKS – Managed Kubernetes for more flexibility.
+  - Next, choose your platform:
+      - EC2 Instances – You manage the infrastructure
+      - AWS Fargate – Serverless (no infrastructure management)
+
+
+
+
+## AWS Lambda
+- Allows you to upload your code into what's called a Lambda function
+- Lets you run code without needing to provision or manage servers
+- Configure a **trigger** for the lamda function, the service waits for the trigger
+- When the trigger is detected, the code is automatically run in a managed environment
+- Lambda will scale your function to meet demand
+- Lambda is designed to run code **under 15 minutes** so this isn't for long running processes like deep learning
+    - It's more suited for quick processing where each invocation of the function takes less than 15 minutes to complete
+- Pay only for the compute time that you consume
+
+![A1](./images/a1.png)
+
+
+
+
+## AWS Services
 - **AWS Management Console**:
     - Web-based user interface.
     - Allows users to manage AWS services through a browser.
@@ -124,15 +223,16 @@
     - Contains tools, documentation, and sample code.
     - Allows for application-level management and automation of AWS resources.
 
-## AWS Cloud9
 
+
+## AWS Cloud9
 - It is a cloud-based integrated development environment (IDE).
 - Provides access via browser to write, run and debug code.
 - It comes integrated with AWS services and it is possible to manage AWS resources directly from the Cloud9 IDE.
 
 
-## VPC
 
+## VPC
 - **Internet Gateway (IGW)**:
     - Connects a VPC to the internet.
     - Allows instances in the VPC to directly communicate with the internet.
@@ -160,18 +260,17 @@
     
 
 ## Subnets
-
 - A **private subnet** is a segment of an Amazon Virtual Private Cloud (VPC) that does not have direct internet access, making it suitable for hosting resources requiring enhanced security or internal communication within the VPC.
 - A **public subnet** is a segment of an Amazon Virtual Private Cloud (VPC) that is accessible from the internet, allowing resources deployed within it to have direct internet connectivity, making it suitable for web servers or applications that require external access.
 
 
-## Security Groups vs Network ACLs (NACL)
 
+## Security Groups vs Network ACLs (NACL)
 ![Image5](./images/img5.png)
 
 
-## Security Group
 
+## Security Group
 - Instance-Level Security
 - Stateful
 - Allow Rules Only
@@ -181,8 +280,9 @@
 - **Services:** EC2, RDS, ElastiCache, Redshift, DocumentDB, Lambda, Neptune, EFS, Elastic MapReduce, WorkSpaces, AppStream, Glue, Snow Family, ELB, VPC Endpoints
 - **Security groups accept IP address, IP address range, and security group ID as either source or destination of inbound or outbound rules.**
 
-## Network ACLs (NACL)
 
+
+## Network ACLs (NACL)
 - Traffic Filtering
 - Stateless
 - Ordered Rules
@@ -190,8 +290,9 @@
 - Subnet Association
 - **Services:** S3, EC2, RDS, RedShift, ElastiCache, EFS, DocumentDB, Neptune, EMR, VPC Endpoints
 
-## Amazon Elastic Block Store (EBS)
 
+
+## Amazon Elastic Block Store (EBS)
 - EBS provides block-level storage for EC2 instances.
 - Offers various volume types for different IOPS (Input/Output Operations Per Second) requirements.
 - Volume data is automatically replicated to several physical drives, increasing durability.
@@ -200,8 +301,9 @@
 - **Amazon EBS pricing includes three factors: volumes, snapshots, data transfer**
 - **It is not a regional service**
 
-## Amazon Elastic File System (EFS)
 
+
+## Amazon Elastic File System (EFS)
 - It is a scalable and easy to manage file storage service on AWS.
 - Can be shared simultaneously by multiple EC2 instances, making it suitable for multi-server workloads.
 - It is elastic and the storage capacity automatically increases or decreases according to your files.
@@ -211,15 +313,13 @@
 - Costs each write and read.
 
 
+
 ## AWS S3 Storage Classes
-
 ![Image6](./images/img6.png)
-
 ![Image7](./images/img7.png)
 
 
 **S3 Standard:**
-
 - General-purpose storage class.
 - Provides high durability and fast data access.
 - Suitable for frequently accessed and frequently updated data.
