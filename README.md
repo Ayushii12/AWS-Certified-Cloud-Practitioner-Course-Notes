@@ -13,19 +13,19 @@
 
 ## Benefits of Cloud Computing
 - **Trade upfront/capital(CAPEX) expense for/with variable/operational(OPEX) expense**
-    - Instead of having to invest heavily in data centers and servers before you know how you’re going to use them, you can pay only when you consume computing resources, and pay only for how much you consume.
+    - Instead of having to invest heavily in data centers and servers before you know how you’re going to use them, you can pay only when you consume computing resources, and pay only for how much you consume
 - **Stop spending money to run and maintain data centers**
-    - Focus on projects that differentiate your business, not the infrastructure. Cloud computing lets you focus on your own customers, rather than on the heavy lifting of racking, stacking, and powering servers.
+    - Focus on projects that differentiate your business, not the infrastructure. Cloud computing lets you focus on your own customers, rather than on the heavy lifting of racking, stacking, and powering servers
 - **Stop guessing capacity**
-    - Eliminate guessing on your infrastructure capacity needs. When you make a capacity decision prior to deploying an application, you often end up either sitting on expensive idle resources or dealing with limited capacity.
-    - With cloud computing, these problems go away. You can access as much or as little capacity as you need and scale up and down as required with only a few minutes’ notice.
+    - Eliminate guessing on your infrastructure capacity needs. When you make a capacity decision prior to deploying an application, you often end up either sitting on expensive idle resources or dealing with limited capacity
+    - With cloud computing, these problems go away. You can access as much or as little capacity as you need and scale up and down as required with only a few minutes’ notice
 - **Benefit from massive economies of scale**
-    - By using cloud computing, you can achieve a lower variable cost than you can get on your own. Because usage from hundreds of thousands of customers is aggregated in the cloud, providers such as AWS can achieve higher economies of scale, which translates into lower pay as-you-go price.
+    - By using cloud computing, you can achieve a lower variable cost than you can get on your own. Because usage from hundreds of thousands of customers is aggregated in the cloud, providers such as AWS can achieve higher economies of scale, which translates into lower pay as-you-go price
 - **Increase speed and agility**
-    - In a cloud computing environment, new IT resources are only a click away, which means that you reduce the time to make those resources available to your developers from weeks to just minutes.
-    - This results in a dramatic increase in agility for the organization since the cost and time it takes to experiment and develop is significantly lower.
+    - In a cloud computing environment, new IT resources are only a click away, which means that you reduce the time to make those resources available to your developers from weeks to just minutes
+    - This results in a dramatic increase in agility for the organization since the cost and time it takes to experiment and develop is significantly lower
 - **Go global in minutes**
-    - Easily deploy your application in multiple regions around the world with just a few clicks. This means you can provide lower latency and a better experience for your customers at minimal cost.
+    - Easily deploy your application in multiple regions around the world with just a few clicks. This means you can provide lower latency and a better experience for your customers at minimal cost
 
 
 
@@ -38,20 +38,32 @@
 
 ## Amazon EC2 Instance Types
 - **General Purpose instances**:
-    - Balanced computing, memory, and networking.
-    - Suitable for web servers, dev environments, and medium databases.
+    - Balanced computing, memory, and networking
+    - Suitable for
+        - Web servers
+        - Dev environments
+        - Medium databases
 - **Compute-optimized instances**:
-    - High vCPUs to memory ratio.
-    - Ideal for scientific modeling, batch processing, gaming server
+    - High **vCPUs to memory** ratio
+    - Ideal for
+        - Scientific modeling
+        - Batch processing
+        - Gaming server
 - **Memory-optimized instances**:
-    - Designed for large in-memory processing.
-    - Perfect for in-memory databases and real-time big data analytics.
+    - Designed for large **in-memory** processing
+    - Perfect for
+        - In-memory databases
+        - Real-time big data analytics
 - **Accelerated computing instances**:
-    - Uses hardware accelerators like GPUs.
-    - Targeted at machine learning, video processing, high-performance computing.
+    - Uses hardware accelerators like **GPUs**
+    - Targeted for
+        - Machine learning
+        - Video processing
+        - High-performance computing
 - **Storage optimized instances**:
-    - High sequential read/write access.
-    - Great for distributed file systems and data warehousing.
+    - High **sequential read/write** access
+    - Great for
+        - Distributed file systems and data warehousing
 
 
 
@@ -75,7 +87,7 @@
     - If you want to run your EC2 instances in different availability zones 
 
 ### EC2 Instance saving plans
-- Can reduce your EC2 instance costs when you make an **hourly** commitment to an instance family and Region for a 1-3 year term
+- Can reduce your EC2 instance costs when you make an **hourly** commitment to an instance family and Region for a 1 year or 3 year term
 - Offers savings of up to **72 percent** compared to On-Demand rates
 
 ### Spot instance
