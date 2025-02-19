@@ -218,6 +218,37 @@
 
 
 
+## AWS Global Infrastructure 
+- Throughout the globe, AWS builds Regions to be closest to where the business traffic demands
+- Inside each Region, we have multiple data centers that have all the compute, storage, and other services you need to run your applications
+- Each Region can be connected to each other Region through a high speed **fiber** network, controlled by AWS
+  
+### Selecting a Region
+- One of the first decisions you get to make is which Region do you pick for your services, data, and applications
+#### 1. Compliance with governance and legal requirements
+- Depending on your company and location, you might need to run your data out of specific areas
+- For example, if your company requires all of its data to reside within the boundaries of the UK, you would choose the London Region
+#### 2. proximity to your customers
+- Selecting a Region that is close to your customers will help you to get content to them faster
+- For example, your company is based in Washington, DC, and many of your customers live in Singapore
+    - You might consider running your infrastructure in the Northern Virginia Region to be close to company headquarters, and run your applications from the Singapore Region 
+#### 3. Available Services Within a Region
+- Sometimes, the closest Region might **not** have **all** the AWS features that you want, forcing to pick the region that has the required AWS feature
+- AWS is frequently innovating and expanding on existing features 
+- However, making new services available around the world sometimes requires AWS to build out physical hardware one Region at a time
+#### 4. Pricing
+- The cost of services can vary from Region to Region
+- Suppose that you are considering running applications in both the United States and Brazil
+- The way Brazil’s tax structure is set up, it might cost 50% more to run the same workload out of the São Paulo Region compared to the Oregon Region
+
+### Availability Zones
+- An Availability Zone is a **single** data center or a **group** of data centers within a **Region**
+- Availability Zones are located tens of miles apart from each other
+- This is close enough to have low latency but distant enough to reduce the chance that multiple Availability Zones are affected
+- A best practice is to run applications across at least **two** Availability Zones in a **Region**
+
+
+
 ## AWS Services
 - **AWS Management Console**:
     - Web-based user interface.
