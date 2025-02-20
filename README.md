@@ -225,18 +225,18 @@
   
 ### Selecting a Region
 - One of the first decisions you get to make is which Region do you pick for your services, data, and applications
-#### 1. Compliance with governance and legal requirements
+##### 1. Compliance with governance and legal requirements
 - Depending on your company and location, you might need to run your data out of specific areas
 - For example, if your company requires all of its data to reside within the boundaries of the UK, you would choose the London Region
-#### 2. proximity to your customers
+##### 2. proximity to your customers
 - Selecting a Region that is close to your customers will help you to get content to them faster
 - For example, your company is based in Washington, DC, and many of your customers live in Singapore
     - You might consider running your infrastructure in the Northern Virginia Region to be close to company headquarters, and run your applications from the Singapore Region 
-#### 3. Available Services Within a Region
+##### 3. Available Services Within a Region
 - Sometimes, the closest Region might **not** have **all** the AWS features that you want, forcing to pick the region that has the required AWS feature
 - AWS is frequently innovating and expanding on existing features 
 - However, making new services available around the world sometimes requires AWS to build out physical hardware one Region at a time
-#### 4. Pricing
+##### 4. Pricing
 - The cost of services can vary from Region to Region
 - Suppose that you are considering running applications in both the United States and Brazil
 - The way Brazil’s tax structure is set up, it might cost 50% more to run the same workload out of the São Paulo Region compared to the Oregon Region
@@ -247,24 +247,50 @@
 - This is close enough to have low latency but distant enough to reduce the chance that multiple Availability Zones are affected
 - A best practice is to run applications across at least **two** Availability Zones in a **Region**
 
+### Edge Locations
+- Stores **cached** copies of your content closer to your customers for faster delivery
+- Example:
+    - Suppose that your company’s data is stored in Brazil, and you have customers who live in China
+    - To provide content to these customers you don’t need to
+        - Move all the content to one of the Chinese Regions
+        - Requir your customers to get their data from Brazil
+    - Instead you can cache a copy locally at an edge location that is close to your customers in China
+    - When a customer in China requests one of your files, Amazon CloudFront retrieves the file from the cache in the edge location and delivers the file to the customer
+
+### AWS Outposts
+- Extensd AWS infrastructure and services to different locations including your **on-premises** data center
 
 
-## AWS Services
+
+## How To Provision AWS Services
+- Invoke **APIs** to provision, configure, and manage your AWS resources
+- In AWS, everything is an API call
 - **AWS Management Console**:
-    - Web-based user interface.
-    - Allows users to manage AWS services through a browser.
-    - Intuitive graphical interface with organized dashboard.
-    - Suitable for those who prefer a GUI-based interaction.
+    - Web-based user interface
+    - Allows users to manage AWS services through a browser
+    - Intuitive graphical interface with organized dashboard
+    - Suitable for those who prefer a GUI-based interaction
 - **AWS CLI (Command Line Interface)**:
-    - Provides direct commands for AWS services.
-    - Can be used on Windows, Mac, and Linux.
-    - Suitable for scripting and automation.
-    - Offers deep functionality and control over services.
+    - Provides direct commands for AWS services
+    - Can be used on Windows, Mac, and Linux
+    - Can automate the actions that your services and applications perform
+    - Offers deep functionality and control over services
 - **AWS SDK (Software Development Kit)**:
-    - Provides libraries in multiple programming languages.
-    - Enables developers to integrate AWS services into their applications.
-    - Contains tools, documentation, and sample code.
-    - Allows for application-level management and automation of AWS resources.
+    - Provides libraries in multiple programming languages
+    - Enables developers to integrate AWS services into their applications through APIs designed for particular languages
+    - Contains tools, documentation, and sample code
+- **AWS Elastic Beanstalk**:
+    - You provide **code** and **configuration settings**
+    - Elastic Beanstalk deploys the resources necessary to perform the following tasks:
+        - Adjust capacity
+        - Load balancing
+        - Automatic scaling
+        - Application health monitoring
+- **AWS CloudFormation**:
+    -  An infrastructure as code tool that allows you to define AWS resources in a declarative way using **JSON** or **YAML** documents called CloudFormation templates
+    - A declarative format like this allows you to define **what** you want to build without specifying the details of exactly **how** to build it 
+
+
 
 
 
