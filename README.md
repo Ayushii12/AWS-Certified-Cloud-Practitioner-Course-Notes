@@ -40,26 +40,19 @@
 - **General Purpose instances**:
     - Balanced computing, memory, and networking
     - Suitable for
-        - Web servers
-        - Dev environments
-        - Medium databases
+        - Web servers, Dev environments, Medium databases
 - **Compute-optimized instances**:
     - High **vCPUs to memory** ratio
     - Ideal for
-        - Scientific modeling
-        - Batch processing
-        - Gaming server
+        - Scientific modeling, Batch processing, Gaming server
 - **Memory-optimized instances**:
     - Designed for large **in-memory** processing
     - Perfect for
-        - In-memory databases
-        - Real-time big data analytics
+        - In-memory databases, Real-time big data analytics
 - **Accelerated computing instances**:
     - Uses hardware accelerators like **GPUs**
     - Targeted for
-        - Machine learning
-        - Video processing
-        - High-performance computing
+        - Machine learning, Video processing, High-performance computing
 - **Storage optimized instances**:
     - High **sequential read/write** access
     - Great for
@@ -69,34 +62,29 @@
 
 
 ## Amazon EC2 Pricing
-
-### On-Demand
-- It is ideal for short-term, irregular workloads that cannot be interrupted
-- No upfront costs or minimum contract apply
-- Pay-as-you-go pricing model
-
-### Reserved instances
-- Ideal for **steady state** applications
-- Standard Reserved Instance
-    - Requires you to specify:
-        - EC2 instance type and size
-        - Platform description (Operating System)
-        - AWS region  
-- Convertible Reserved Instance
-    - If you need different EC2 instance types
-    - If you want to run your EC2 instances in different availability zones 
-
-### EC2 Instance saving plans
-- Can reduce your EC2 instance costs when you make an **hourly** commitment to an instance family and Region for a 1 year or 3 year term
-- Offers savings of up to **72 percent** compared to On-Demand rates
-
-### Spot instance
-- Uses unused Amazon EC2 computing capacity and offer you cost savings at up to 90% off of On-Demand prices
-- Useful for applications that can withstand interruptions
-
-### Dedicated host
-- Physical servers fully dedicated to you use
-- Of all the Amazon EC2 options, Dedicated Hosts are the most expensive
+- **On-Demand**
+    - It is ideal for short-term, irregular workloads that cannot be interrupted
+    - No upfront costs or minimum contract apply
+    - Pay-as-you-go pricing model
+- **Reserved instances**
+    - Ideal for **steady state** applications
+    - Standard Reserved Instance
+        - Requires you to specify:
+            - EC2 instance type and size
+            - Platform description (Operating System)
+            - AWS region  
+    - Convertible Reserved Instance
+        - If you need different EC2 instance types
+        - If you want to run your EC2 instances in different availability zones 
+- **Saving plans**
+    - Can reduce your EC2 instance costs when you make an **hourly** commitment to an instance family and Region for a 1 year or 3 year term
+    - Offers savings of up to **72 percent** compared to On-Demand rates
+- **Spot instance**
+    - Uses unused Amazon EC2 computing capacity and offer you cost savings at up to 90% off of On-Demand prices
+    - Useful for applications that can withstand interruptions
+- **Dedicated host**
+    - Physical servers fully dedicated to you use
+    - Of all the Amazon EC2 options, Dedicated Hosts are the most expensive
 
 
 
@@ -104,8 +92,7 @@
 ## Amazon EC2 Scalability
 - Scalability involves beginning with **only** the resources you **need** and designing your architecture to **automatically** respond to changing demand by **scaling out** or **in**
 - As a result, you pay for only the resources you use
-
-### Amazon EC2 Auto Scaling:
+#### Amazon EC2 Auto Scaling:
 - Amazon EC2 Auto Scaling enables you to automatically **add** or **remove** Amazon EC2 instances in response to changing application demand
 - Within Amazon EC2 Auto Scaling, you can use two approaches
     - **Dynamic** scaling: Dynamic scaling responds to changing demand
@@ -133,13 +120,11 @@
 ## Monolithic Applications VS Microservices
 - Applications are made of multiple components
     - The components communicate with each other to transmit data, fulfill requests, and keep the application running.
-  
-### Monolithic Applications
+#### Monolithic Applications
 - Composed of tightly coupled components (e.g., databases, servers, UI, business logic)
 - Failure in one component can lead to failure of other components or the entire application
 - To help maintain application availability when a single component fails, you can design your application through a microservices approach
-
-### Microservices
+#### Microservices
 - Components are loosely coupled
 - Failure in one component does not bring down the entire application
 - AWS services that support microservices:
@@ -149,9 +134,11 @@
 
 
 
+
 ## Amazon Simple Notification Service (Amazon SNS)
 - Amazon SNS is a publish/subscribe service --> A publisher publishes messages to subscribers
 - Allows applications to send messages to multiple subscribers (e.g., email, SMS, Lambda, SQS) simultaneously
+
 
 
 
@@ -165,15 +152,14 @@
 
 
 
-## Additional Compute Services
 
-### 1. Serverless Services
+## Additional Compute Services
+#### 1. Serverless Services
 - Serverless computing means that you don’t manage or see the underlying infrastructure hosting your application
 - Instead AWS fully manages provisioning, scaling, availability, and maintenance
 - Example:
     - AWS Lambda
-  
-### 2. Continer Services 
+#### 2. Continer Services 
 - If you’re not ready for serverless computing or need access to the underlying environment, but still want efficiency and portability
 - Containers provide you with a standard way to **package** your application's code and dependencies into a **single** object
 - A container in this case is a **Docker** container
@@ -184,21 +170,21 @@
         - Allows API calls to launch and stop Docker-enabled applications 
     - Amazon EKS (Elastic Kubernetes Service)
         - Fully managed service that you can use to run Kubernetes on AWS  
-
-### Choosing the Right AWS Compute Service
-- 1. Amazon EC2 (Elastic Compute Cloud)
+#### Choosing the Right AWS Compute Service
+- **1. Amazon EC2 (Elastic Compute Cloud)**
     - Best for hosting traditional applications
     - Provides full access to the underlying OS (Linux or Windows)
-- 2. AWS Lambda (Serverless)
+- **2. AWS Lambda (Serverless)**
     - Best for short-running functions, service-oriented, or event-driven applications
     - No need to manage servers or the underlying environment
-- 3. Running Containers on AWS
+- **3. Running Containers on AWS**
   - First, choose your orchestration tool:
       - Amazon ECS – Simpler, AWS-native container orchestration
       - Amazon EKS – Managed Kubernetes for more flexibility.
   - Next, choose your platform:
       - EC2 Instances – You manage the infrastructure
       - AWS Fargate – Serverless (no infrastructure management)
+
 
 
 
@@ -218,36 +204,37 @@
 
 
 
+
 ## AWS Global Infrastructure 
 - Throughout the globe, AWS builds Regions to be closest to where the business traffic demands
 - Inside each Region, we have multiple data centers that have all the compute, storage, and other services you need to run your applications
-- Each Region can be connected to each other Region through a high speed **fiber** network, controlled by AWS
-  
-### Selecting a Region
-- One of the first decisions you get to make is which Region do you pick for your services, data, and applications
-##### 1. Compliance with governance and legal requirements
-- Depending on your company and location, you might need to run your data out of specific areas
-- For example, if your company requires all of its data to reside within the boundaries of the UK, you would choose the London Region
-##### 2. proximity to your customers
-- Selecting a Region that is close to your customers will help you to get content to them faster
-- For example, your company is based in Washington, DC, and many of your customers live in Singapore
-    - You might consider running your infrastructure in the Northern Virginia Region to be close to company headquarters, and run your applications from the Singapore Region 
-##### 3. Available Services Within a Region
-- Sometimes, the closest Region might **not** have **all** the AWS features that you want, forcing to pick the region that has the required AWS feature
-- AWS is frequently innovating and expanding on existing features 
-- However, making new services available around the world sometimes requires AWS to build out physical hardware one Region at a time
-##### 4. Pricing
-- The cost of services can vary from Region to Region
-- Suppose that you are considering running applications in both the United States and Brazil
-- The way Brazil’s tax structure is set up, it might cost 50% more to run the same workload out of the São Paulo Region compared to the Oregon Region
+- Each Region can be connected to each other Region through a high speed **fiber** network, controlled by AWS  
 
-### Availability Zones
+#### Selecting a Region
+- One of the first decisions you get to make is which Region do you pick for your services, data, and applications
+- **1. Compliance with governance and legal requirements**
+    - Depending on your company and location, you might need to run your data out of specific areas
+    - For example, if your company requires all of its data to reside within the boundaries of the UK, you would choose the London Region
+- **2. proximity to your customers**
+    - Selecting a Region that is close to your customers will help you to get content to them faster
+    - For example, your company is based in Washington, DC, and many of your customers live in Singapore
+        - You might consider running your infrastructure in the Northern Virginia Region to be close to company headquarters, and run your applications from the Singapore Region 
+- **3. Available Services Within a Region**
+    - Sometimes, the closest Region might **not** have **all** the AWS features that you want, forcing to pick the region that has the required AWS feature
+    - AWS is frequently innovating and expanding on existing features 
+    - However, making new services available around the world sometimes requires AWS to build out physical hardware one Region at a time
+- **4. Pricing**
+    - The cost of services can vary from Region to Region
+    - Suppose that you are considering running applications in both the United States and Brazil
+    - The way Brazil’s tax structure is set up, it might cost 50% more to run the same workload out of the São Paulo Region compared to the Oregon Region
+
+#### Availability Zones
 - An Availability Zone is a **single** data center or a **group** of data centers within a **Region**
 - Availability Zones are located tens of miles apart from each other
 - This is close enough to have low latency but distant enough to reduce the chance that multiple Availability Zones are affected
 - A best practice is to run applications across at least **two** Availability Zones in a **Region**
 
-### Edge Locations
+#### Edge Locations
 - Stores **cached** copies of your content closer to your customers for faster delivery
 - Example:
     - Suppose that your company’s data is stored in Brazil, and you have customers who live in China
@@ -257,8 +244,10 @@
     - Instead you can cache a copy locally at an edge location that is close to your customers in China
     - When a customer in China requests one of your files, Amazon CloudFront retrieves the file from the cache in the edge location and delivers the file to the customer
 
-### AWS Outposts
+#### AWS Outposts
 - Extensd AWS infrastructure and services to different locations including your **on-premises** data center
+
+
 
 
 
@@ -294,70 +283,53 @@
 
 
 
-## AWS Cloud9
-- It is a cloud-based integrated development environment (IDE).
-- Provides access via browser to write, run and debug code.
-- It comes integrated with AWS services and it is possible to manage AWS resources directly from the Cloud9 IDE.
-
-
-
 ## VPC
+- A networking service that you can use to **establish boundaries** around your AWS resources
+- Enables you to provision an isolated section of the AWS Cloud
 - **Internet Gateway (IGW)**:
-    - Connects a VPC to the internet.
-    - Allows instances in the VPC to directly communicate with the internet.
-    - Essential for a public subnet in a VPC to send/receive traffic to/from the internet.
+    - To allow **public** traffic from the internet to access resources within the VPC
+    - Without an internet gateway, no one can access the resources within your VPC
+    - Think of an internet gateway as being similar to a doorway that customers use to enter the coffee shop
 - **Virtual Private Gateway (VGW)**:
-    - Endpoint for connecting a VPC to a VPN or AWS Direct Connect.
-    - Establishes connectivity between AWS and on-premises data centers or other remote networks.
-- **VPC Peering**:
-    - Allows direct network connectivity between two VPCs.
-    - VPCs can be in the same AWS account or different accounts.
-    - Ensures private, high-speed communication between VPCs without routing traffic through the internet.
+    - Enables you to establish a **VPN** connection between your VPC and a private network, such as an on-premises data center or internal corporate network
+    - Allows traffic into the VPC only if it is coming from an **approved** network
+        - To access **private** resources in a VPC
 - **AWS Direct Connect**:
-    - Dedicated network connection from on-premises to AWS.
-    - Bypasses the public internet for more consistent network performance.
-    - Can reduce network costs, increase bandwidth, and provide a more consistent network experience than internet-based connections.
-    - without public internet
-- **NAT Gateway**:
-    - Allows instances in a private subnet to initiate outbound traffic to the internet.
-    - Prevents unsolicited inbound traffic from reaching those instances.
-    - Used for scenarios where instances need to download patches, updates, etc., but should not be directly accessed from the internet.
-    - Managed by AWS
-- **NAT Gateway vs NAT Instance**
-    ![Image4](./images/img4.png)
-
+    - Lets you to establish a **dedicated** private connection between your data center and a VPC
+    - Can reduce network costs, increase bandwidth, and provide a more consistent network experience than public internet based connections
     
 
+
+
+
 ## Subnets
-- A **private subnet** is a segment of an Amazon Virtual Private Cloud (VPC) that does not have direct internet access, making it suitable for hosting resources requiring enhanced security or internal communication within the VPC.
-- A **public subnet** is a segment of an Amazon Virtual Private Cloud (VPC) that is accessible from the internet, allowing resources deployed within it to have direct internet connectivity, making it suitable for web servers or applications that require external access.
+- A **section** of a VPC in which you can **group** resources based on security needs
+- **Private subnet**: Contains resources that should be accessible only through your **private** network, such as a database that contains customers’ personal information and order histories
+- **Public subnet**: Contains resources that need to be accessible by the **public**, such as an online store’s website
+- In a VPC, subnets can **communicate** with each other
+    - For example, you might have an application that involves Amazon EC2 instances in a public subnet communicating with databases that are located in a private subnet.
 
 
 
-## Security Groups vs Network ACLs (NACL)
-![Image5](./images/img5.png)
 
 
+## Network ACLs (Access Control List)
+- A virtual firewall that controls inbound and outbound traffic at the **subnet** level
+- Stateless
+    - They remember nothing and check packets that cross the subnet border **both** way: inbound and outbound
 
 ## Security Group
-- Instance-Level Security
+- A virtual firewall that controls inbound and outbound traffic at the **instance** level
 - Stateful
-- Allow Rules Only
-- No Rule Numbers
-- Dynamic and Easy
-- Permissive to Restrictive
-- **Services:** EC2, RDS, ElastiCache, Redshift, DocumentDB, Lambda, Neptune, EFS, Elastic MapReduce, WorkSpaces, AppStream, Glue, Snow Family, ELB, VPC Endpoints
+    - They remember previous decisions made for incoming packets
+    - So when a packet **response** for that request returns, it **allows** the response to go through regardless of the inbound security group rules 
+- By default, a security group **denies** all **inbound** traffic and **allows** all **outbound** traffic
 - **Security groups accept IP address, IP address range, and security group ID as either source or destination of inbound or outbound rules.**
+  
+![A6](./images/a6.png)
 
 
 
-## Network ACLs (NACL)
-- Traffic Filtering
-- Stateless
-- Ordered Rules
-- Numerical Rule Numbers
-- Subnet Association
-- **Services:** S3, EC2, RDS, RedShift, ElastiCache, EFS, DocumentDB, Neptune, EMR, VPC Endpoints
 
 
 
