@@ -268,6 +268,9 @@
     - Provides libraries in multiple programming languages
     - Enables developers to integrate AWS services into their applications through APIs designed for particular languages
     - Contains tools, documentation, and sample code
+- **AWS CloudFormation**:
+    -  An infrastructure as code tool that allows you to define AWS resources in a declarative way using **JSON** or **YAML** documents called CloudFormation templates
+    - A declarative format like this allows you to define **what** you want to build without specifying the details of exactly **how** to build it 
 - **AWS Elastic Beanstalk**:
     - You provide **code** and **configuration settings**
     - Elastic Beanstalk deploys the resources necessary to perform the following tasks:
@@ -275,9 +278,6 @@
         - Load balancing
         - Automatic scaling
         - Application health monitoring
-- **AWS CloudFormation**:
-    -  An infrastructure as code tool that allows you to define AWS resources in a declarative way using **JSON** or **YAML** documents called CloudFormation templates
-    - A declarative format like this allows you to define **what** you want to build without specifying the details of exactly **how** to build it 
 
 
 
@@ -317,6 +317,7 @@
 - A virtual firewall that controls inbound and outbound traffic at the **subnet** level
 - Stateless
     - They remember nothing and check packets that cross the subnet border **both** way: inbound and outbound
+- By default, network ACL **allows** all inbound and outbound traffic, but you can modify it by adding your own rules  
 
 ## Security Group
 - A virtual firewall that controls inbound and outbound traffic at the **instance** level
@@ -324,7 +325,6 @@
     - They remember previous decisions made for incoming packets
     - So when a packet **response** for that request returns, it **allows** the response to go through regardless of the inbound security group rules 
 - By default, a security group **denies** all **inbound** traffic and **allows** all **outbound** traffic
-- **Security groups accept IP address, IP address range, and security group ID as either source or destination of inbound or outbound rules.**
   
 ![A6](./images/a6.png)
 
