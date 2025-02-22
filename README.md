@@ -353,12 +353,12 @@
         - Also supports transferring DNS records from other domain registrars
 - **CloudFront**
     - CDN service offered by AWS
-  - How Amazon Route 53 and Amazon CloudFront deliver content
-      - A customer requests data from the application by going to AnyCompany’s website
-      - Amazon Route 53 uses DNS resolution to identify AnyCompany.com’s corresponding IP address, 192.0.2.0. This information is sent back to the customer
-      - The customer’s request is sent to the nearest edge location through Amazon CloudFront
-      - Amazon CloudFront connects to the Application Load Balancer, which sends the incoming packet to an Amazon EC2 instance
-        ![A8](./images/a8.png) 
+- **How Amazon Route 53 and Amazon CloudFront deliver content**
+  - A customer requests data from the application by going to AnyCompany’s website
+  - Amazon Route 53 uses DNS resolution to identify AnyCompany.com’s corresponding IP address, 192.0.2.0. This information is sent back to the customer
+  - The customer’s request is sent to the nearest edge location through Amazon CloudFront
+  - Amazon CloudFront connects to the Application Load Balancer, which sends the incoming packet to an Amazon EC2 instance
+    ![A8](./images/a8.png) 
   
 
 
