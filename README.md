@@ -319,6 +319,10 @@
     - They remember nothing and check packets that cross the subnet border **both** way: inbound and outbound
 - By default, network ACL **allows** all inbound and outbound traffic, but you can modify it by adding your own rules  
 
+
+
+
+
 ## Security Group
 - A virtual firewall that controls inbound and outbound traffic at the **instance** level
 - Stateful
@@ -330,6 +334,32 @@
 
 
 
+
+
+## Global Networking
+- **Domain Name System (DNS)**
+    - Translates human-readable **domain names** into **IP addresses**, enabling users to access websites
+    - DNS resolution involves a customer DNS resolver communicating with a company DNS server
+    ![A7](./images/a7.png)
+- **Content Delivery Network (CDN)**
+    - Caches content in multiple locations spread globally
+    - When a user requests content, it is served from the nearest edge location instead of the origin server, reducing latency  
+- **Route 53**
+    - DNS service offered by AWS
+    - A reliable way to **route** end users to applications hosted in AWS
+        - It connects user requests to infrastructure running **in** AWS as well as **outside** of AWS
+    - Route 53 allows you to manage DNS records for domain names
+        - Can register new domain names directly in Route 53
+        - Also supports transferring DNS records from other domain registrars
+- **CloudFront**
+    - CDN service offered by AWS
+  - How Amazon Route 53 and Amazon CloudFront deliver content
+      - A customer requests data from the application by going to AnyCompany’s website
+      - Amazon Route 53 uses DNS resolution to identify AnyCompany.com’s corresponding IP address, 192.0.2.0. This information is sent back to the customer
+      - The customer’s request is sent to the nearest edge location through Amazon CloudFront
+      - Amazon CloudFront connects to the Application Load Balancer, which sends the incoming packet to an Amazon EC2 instance
+        ![A8](./images/a8.png) 
+  
 
 
 
