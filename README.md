@@ -1,12 +1,10 @@
 # AWS Certified Cloud Practitioner Certification - My Notes
 
-
-
-
 ## Deployment Models for Cloud Computing
 - Cloud-Based Deployment
 - On-Premises Deployment
 - Hybrid Deployment
+
 
 
 
@@ -27,11 +25,6 @@
 - **Go global in minutes**
     - Easily deploy your application in multiple regions around the world with just a few clicks. This means you can provide lower latency and a better experience for your customers at minimal cost
 
-
-
-
-## AWS Shared Responsibility Model
-![Image1](./images/img1.png)
 
 
 
@@ -57,6 +50,7 @@
     - High **sequential read/write** access
     - Great for
         - Distributed file systems and data warehousing
+
 
 
 
@@ -89,18 +83,20 @@
 
 
 
+
 ## Amazon EC2 Scalability
 - Scalability involves beginning with **only** the resources you **need** and designing your architecture to **automatically** respond to changing demand by **scaling out** or **in**
 - As a result, you pay for only the resources you use
-#### Amazon EC2 Auto Scaling:
-- Amazon EC2 Auto Scaling enables you to automatically **add** or **remove** Amazon EC2 instances in response to changing application demand
-- Within Amazon EC2 Auto Scaling, you can use two approaches
-    - **Dynamic** scaling: Dynamic scaling responds to changing demand
-    - **Predictive** scaling: Predictive scaling automatically schedules the right number of Amazon EC2 instances based on predicted demand
-- When launching an application on Amazon EC2 instances, configure the Auto Scaling group. It includes 3 capacity settings
-    - Minimum capacity: The **initial** number of EC2 instances launched when the Auto Scaling group is created
-    - Desired capacity: Represents the number of instances the group attempts to **maintain**. If not explicitly set, it defaults to the minimum capacity
-    - Maximum capacity: The **upper** limit on the number of EC2 instances the group can scale out to in response to changing demands
+- **Amazon EC2 Auto Scaling**:
+    - Amazon EC2 Auto Scaling enables you to automatically **add** or **remove** Amazon EC2 instances in response to changing application demand
+    - Within Amazon EC2 Auto Scaling, you can use two approaches
+        - **Dynamic** scaling: Dynamic scaling responds to changing demand
+        - **Predictive** scaling: Predictive scaling automatically schedules the right number of Amazon EC2 instances based on predicted demand
+    - When launching an application on Amazon EC2 instances, configure the Auto Scaling group. It includes 3 capacity settings
+        - Minimum capacity: The **initial** number of EC2 instances launched when the Auto Scaling group is created
+        - Desired capacity: Represents the number of instances the group attempts to **maintain**. If not explicitly set, it defaults to the minimum capacity
+        - Maximum capacity: The **upper** limit on the number of EC2 instances the group can scale out to in response to changing demands
+
 
 
 
@@ -117,19 +113,20 @@
 
 
 
+
 ## Monolithic Applications VS Microservices
 - Applications are made of multiple components
     - The components communicate with each other to transmit data, fulfill requests, and keep the application running.
-#### Monolithic Applications
-- Composed of tightly coupled components (e.g., databases, servers, UI, business logic)
-- Failure in one component can lead to failure of other components or the entire application
-- To help maintain application availability when a single component fails, you can design your application through a microservices approach
-#### Microservices
-- Components are loosely coupled
-- Failure in one component does not bring down the entire application
-- AWS services that support microservices:
-    - Amazon **SNS** – Enables event-driven messaging
-    - Amazon **SQS** – Manages message queues for decoupling services
+- **Monolithic Applications**
+    - Composed of tightly coupled components (e.g., databases, servers, UI, business logic)
+    - Failure in one component can lead to failure of other components or the entire application
+    - To help maintain application availability when a single component fails, you can design your application through a microservices approach
+- **Microservices**
+    - Components are loosely coupled
+    - Failure in one component does not bring down the entire application
+    - AWS services that support microservices:
+        - Amazon **SNS** – Enables event-driven messaging
+        - Amazon **SQS** – Manages message queues for decoupling services
 
 
 
@@ -154,36 +151,36 @@
 
 
 ## Additional Compute Services
-#### 1. Serverless Services
-- Serverless computing means that you don’t manage or see the underlying infrastructure hosting your application
-- Instead AWS fully manages provisioning, scaling, availability, and maintenance
-- Example:
-    - AWS Lambda
-#### 2. Continer Services 
-- If you’re not ready for serverless computing or need access to the underlying environment, but still want efficiency and portability
-- Containers provide you with a standard way to **package** your application's code and dependencies into a **single** object
-- A container in this case is a **Docker** container
-- Example:
-    - Amazon ECS (Elastic Container Service)
-        - A highly scalable, high-performance container management system that enables you to run and scale containerized applications on AWS
-        - Supports Docker containers
-        - Allows API calls to launch and stop Docker-enabled applications 
-    - Amazon EKS (Elastic Kubernetes Service)
-        - Fully managed service that you can use to run Kubernetes on AWS  
-#### Choosing the Right AWS Compute Service
-- **1. Amazon EC2 (Elastic Compute Cloud)**
-    - Best for hosting traditional applications
-    - Provides full access to the underlying OS (Linux or Windows)
-- **2. AWS Lambda (Serverless)**
-    - Best for short-running functions, service-oriented, or event-driven applications
-    - No need to manage servers or the underlying environment
-- **3. Running Containers on AWS**
-  - First, choose your orchestration tool:
-      - Amazon ECS – Simpler, AWS-native container orchestration
-      - Amazon EKS – Managed Kubernetes for more flexibility.
-  - Next, choose your platform:
-      - EC2 Instances – You manage the infrastructure
-      - AWS Fargate – Serverless (no infrastructure management)
+- **1. Serverless Services**
+    - Serverless computing means that you don’t manage or see the underlying infrastructure hosting your application
+    - Instead AWS fully manages provisioning, scaling, availability, and maintenance
+    - Example:
+        - AWS Lambda
+- **2. Container Services**
+    - If you’re not ready for serverless computing or need access to the underlying environment, but still want efficiency and portability
+    - Containers provide you with a standard way to **package** your application's code and dependencies into a **single** object
+    - A container in this case is a **Docker** container
+    - Example:
+        - Amazon ECS (Elastic Container Service)
+            - A highly scalable, high-performance container management system that enables you to run and scale containerized applications on AWS
+            - Supports Docker containers
+            - Allows API calls to launch and stop Docker-enabled applications 
+        - Amazon EKS (Elastic Kubernetes Service)
+            - Fully managed service that you can use to run Kubernetes on AWS  
+- **Choosing the Right AWS Compute Service**
+    - **1. Amazon EC2 (Elastic Compute Cloud)**
+        - Best for hosting traditional applications
+        - Provides full access to the underlying OS (Linux or Windows)
+    - **2. AWS Lambda (Serverless)**
+        - Best for short-running functions, service-oriented, or event-driven applications
+        - No need to manage servers or the underlying environment
+    - **3. Running Containers on AWS**
+      - First, choose your orchestration tool:
+          - Amazon ECS – Simpler, AWS-native container orchestration
+          - Amazon EKS – Managed Kubernetes for more flexibility.
+      - Next, choose your platform:
+          - EC2 Instances – You manage the infrastructure
+          - AWS Fargate – Serverless (no infrastructure management)
 
 
 
@@ -198,7 +195,6 @@
 - Lambda is designed to run code **under 15 minutes** so this isn't for long running processes like deep learning
     - It's more suited for quick processing where each invocation of the function takes less than 15 minutes to complete
 - Pay only for the compute time that you consume
-
 ![A1](./images/a1.png)
 
 
@@ -210,42 +206,42 @@
 - Inside each Region, we have multiple data centers that have all the compute, storage, and other services you need to run your applications
 - Each Region can be connected to each other Region through a high speed **fiber** network, controlled by AWS  
 
-#### Selecting a Region
-- One of the first decisions you get to make is which Region do you pick for your services, data, and applications
-- **1. Compliance with governance and legal requirements**
-    - Depending on your company and location, you might need to run your data out of specific areas
-    - For example, if your company requires all of its data to reside within the boundaries of the UK, you would choose the London Region
-- **2. proximity to your customers**
-    - Selecting a Region that is close to your customers will help you to get content to them faster
-    - For example, your company is based in Washington, DC, and many of your customers live in Singapore
-        - You might consider running your infrastructure in the Northern Virginia Region to be close to company headquarters, and run your applications from the Singapore Region 
-- **3. Available Services Within a Region**
-    - Sometimes, the closest Region might **not** have **all** the AWS features that you want, forcing to pick the region that has the required AWS feature
-    - AWS is frequently innovating and expanding on existing features 
-    - However, making new services available around the world sometimes requires AWS to build out physical hardware one Region at a time
-- **4. Pricing**
-    - The cost of services can vary from Region to Region
-    - Suppose that you are considering running applications in both the United States and Brazil
-    - The way Brazil’s tax structure is set up, it might cost 50% more to run the same workload out of the São Paulo Region compared to the Oregon Region
+- **Region**
+    - One of the first decisions you get to make is which Region do you pick for your services, data, and applications
+        - **1. Compliance with governance and legal requirements**
+            - Depending on your company and location, you might need to run your data out of specific areas
+            - For example, if your company requires all of its data to reside within the boundaries of the UK, you would choose the London Region
+        - **2. proximity to your customers**
+            - Selecting a Region that is close to your customers will help you to get content to them faster
+            - For example, your company is based in Washington, DC, and many of your customers live in Singapore
+                - You might consider running your infrastructure in the Virginia Region to be close to company headquarters, and run your applications from the Singapore Region 
+        - **3. Available Services Within a Region**
+            - Sometimes, the closest Region might **not** have **all** the AWS features that you want, forcing to pick the region that has the required AWS feature
+            - AWS is frequently innovating and expanding on existing features 
+            - However, making new services available around the world sometimes requires AWS to build out physical hardware one Region at a time
+        - **4. Pricing**
+            - The cost of services can vary from Region to Region
+            - Suppose that you are considering running applications in both the United States and Brazil
+            - The way Brazil’s tax structure is set up, it might cost 50% more to run the same workload out of the São Paulo Region compared to the Oregon Region
 
-#### Availability Zones
-- An Availability Zone is a **single** data center or a **group** of data centers within a **Region**
-- Availability Zones are located tens of miles apart from each other
-- This is close enough to have low latency but distant enough to reduce the chance that multiple Availability Zones are affected
-- A best practice is to run applications across at least **two** Availability Zones in a **Region**
+    - **Availability Zones**
+        - An Availability Zone is a **single** data center or a **group** of data centers within a **Region**
+        - Availability Zones are located tens of miles apart from each other
+        - This is close enough to have low latency but distant enough to reduce the chance that multiple Availability Zones are affected
+        - A best practice is to run applications across at least **two** Availability Zones in a **Region**
 
-#### Edge Locations
-- Stores **cached** copies of your content closer to your customers for faster delivery
-- Example:
-    - Suppose that your company’s data is stored in Brazil, and you have customers who live in China
-    - To provide content to these customers you don’t need to
-        - Move all the content to one of the Chinese Regions
-        - Requir your customers to get their data from Brazil
-    - Instead you can cache a copy locally at an edge location that is close to your customers in China
-    - When a customer in China requests one of your files, Amazon CloudFront retrieves the file from the cache in the edge location and delivers the file to the customer
+    - **Edge Locations**
+        - Stores **cached** copies of your content closer to your customers for faster delivery
+        - Example:
+            - Suppose that your company’s data is stored in Brazil, and you have customers who live in China
+            - To provide content to these customers you don’t need to
+                - Move all the content to one of the Chinese Regions
+                - Requir your customers to get their data from Brazil
+            - Instead you can cache a copy locally at an edge location that is close to your customers in China
+            - When a customer in China requests one of your files, Amazon CloudFront retrieves the file from the cache in the edge location and delivers the file to the customer
 
-#### AWS Outposts
-- Extensd AWS infrastructure and services to different locations including your **on-premises** data center
+    - **AWS Outposts**
+        - Extensd AWS infrastructure and services to different locations including your **on-premises** data center
 
 
 
@@ -329,7 +325,6 @@
     - They remember previous decisions made for incoming packets
     - So when a packet **response** for that request returns, it **allows** the response to go through regardless of the inbound security group rules 
 - By default, a security group **denies** all **inbound** traffic and **allows** all **outbound** traffic
-  
 ![A6](./images/a6.png)
 
 
@@ -359,114 +354,120 @@
   - The customer’s request is sent to the nearest edge location through Amazon CloudFront
   - Amazon CloudFront connects to the Application Load Balancer, which sends the incoming packet to an Amazon EC2 instance
     ![A8](./images/a8.png) 
+
   
 
 
-
-## Amazon Elastic Block Store (EBS)
-- EBS provides block-level storage for EC2 instances.
-- Offers various volume types for different IOPS (Input/Output Operations Per Second) requirements.
-- Volume data is automatically replicated to several physical drives, increasing durability.
-- EBS snapshots provide data protection by creating backups (snapshots) in S3.
-- Has the ability to optionally enlarge or change volumes. (auto scale)
-- **Amazon EBS pricing includes three factors: volumes, snapshots, data transfer**
-- **It is not a regional service**
-
-
-
-## Amazon Elastic File System (EFS)
-- It is a scalable and easy to manage file storage service on AWS.
-- Can be shared simultaneously by multiple EC2 instances, making it suitable for multi-server workloads.
-- It is elastic and the storage capacity automatically increases or decreases according to your files.
-- It has high durability and usability; files are automatically replicated across multiple Availability Zones.
-- It comes with POSIX-compliant file system semantics, which makes it suitable for many applications.
-- It is a regional service.
-- Costs each write and read.
+## Instance Store and Amazon Elastic Block Store (EBS)
+- **Instance Store**:  
+    - A **disk** storage that is **physically** attached to the **host** computer the EC2 instance is running on, and therefore has the **same** lifespan as the instance
+    - When the instance is terminated, you **lose** any data in the instance store
+    - Best for temporary data 
+- **Amazon Elastic Block Store (EBS)**
+    - Provides **block-level** storage volumes that you can use with Amazon EC2 instances
+    - If you stop or terminate an Amazon EC2 instance, all the data on the attached EBS volume remains available
+    - Because EBS volumes are for data that needs to **persist**, it’s important to **back up** the data on **seperate** drives from the local instance
+        - You can take incremental backups of EBS volumes by creating Amazon EBS snapshots
+        - Incremental Backup:
+            - Means that the first backup taken of a volume copies all the data
+            - For subsequent backups, **only** the blocks of data that have **changed** since the most recent snapshot are saved 
+   ![A9](./images/a9.png) 
 
 
 
-## AWS S3 Storage Classes
-![Image6](./images/img6.png)
-![Image7](./images/img7.png)
 
 
-**S3 Standard:**
-- General-purpose storage class.
-- Provides high durability and fast data access.
-- Suitable for frequently accessed and frequently updated data.
-- Stores data in a minimum of three Availability Zones
-- Host static website
+## Amazon Simple Storage Service (Amazon S3)
+- An AWS service that offers object level storage
+    - Object Level Storage
+        - Each object consists of
+            - **Data**: Might be an image, video, text document, or any other type of file
+            - **Metadata**: Contains information about what the data is, how it is used, the object size, and so on
+            - **Key**: Its unique identifier
+- S3 stores data as objects in **buckets**
+    - Maximum size for an object in Amazon S3 is **5 TB**
+- S3 offers unlimited storage space
+- **AWS S3 Storage Classes**
+    -  When selecting an Amazon S3 storage class, consider these two factors:
+        - How **often** you plan to retrieve your data
+        - How **available** you need your data to be
+    - **S3 Standard:**
+        - General-purpose storage class
+        - Stores data in a minimum of three Availability Zones
+        - Suitable for **frequently** accessed data
+            - Makes it a good choice for a wide range of use cases, such as websites, content distribution, and data analytics 
+        - Has a **higher** cost than other storage classes intended for infrequently accessed data and archival storage
+    - **S3 Standard-Infrequent Access (S3 Standard-IA):**
+        - Ideal for data that is **infrequently** accessed but requires high availability when needed
+        - Provides the same level of availability as Amazon S3 Standard but with a lower storage price and a higher retrieval price
+        - Stores data in a minimum of three Availability Zones
+        - Requires a minimum storage duration of 30 days
+    - **S3 One Zone-Infrequent Access (S3 One Zone-IA):**
+        - Stores data in a **single** AWS Availability Zone for cost savings
+        - Requires a minimum storage duration of 30 days.
+        - A good storage class to consider if:
+            - You want to save costs on storage
+            - You can easily reproduce your data in the event of an Availability Zone failure
+    - **S3 Intelligent-Tiering:**
+        - Ideal for data with **unknown** or **changing** access patterns
+        - Requires a small monthly monitoring and automation fee per object
+            - Amazon S3 monitors objects’ access patterns
+                - If you haven’t accessed an object for 30 consecutive days, Amazon S3 automatically moves it to the infrequent access tier (S3 Standard-IA)
+                - If you access an object in the infrequent access tier, Amazon S3 automatically moves it to the frequent access tier (S3 Standard)
+    - **S3 Glacier Instant Retrieval:**
+        - Works well for archived data that requires **immediate** access
+        - Can retrieve objects within a few **milliseconds**
+    - **S3 Glacier Flexible Retrieval:**
+        - Low-cost storage designed for data archiving
+        - Able to retrieve objects within a **1 minute to 12 hours**
+    - **S3 Glacier Deep Archive:**
+        - Lowest-cost archival storage class
+        - Suitable for long-term archiving and **rarely** accessed data (i.e once or twice in a year)
+        - Provides data retrieval within **12 to 48 hours**
+        - All objects from this storage class are replicated across at least three geographically dispersed Availability Zones
+    - **S3 Outposts:**
+        - Delivers object storage to your **on-premises** AWS Outposts environment
+        - Works well for workloads with **local data residency requirements** that must satisfy demanding performance needs by keeping data close to on-premises applications
 
-**S3 Standard-Infrequent Access (S3 Standard-IA):**
+    ![Image6](./images/img6.png)
+    ![Image7](./images/img7.png)
 
-- Ideal for infrequently accessed data
-- Similar to Amazon S3 Standard but has a lower storage price and higher retrieval price
-- Requires a minimum storage duration of 30 days.
-- Long-term storage, backup
-
-**S3 One Zone-Infrequent Access (S3 One Zone-IA):**
-
-- Stores data in a single AWS Availability Zone for cost savings.
-- Suitable for less frequently accessed data.
-- Requires a minimum storage duration of 30 days.
-- Can be preferred for backups or data that can be recreated.
-
-**S3 Intelligent-Tiering:**
-
-- Ideal for data with unknown or changing access patterns
-- Requires a small monthly monitoring and automation fee per object
-
-**S3 Glacier Instant Retrieval:**
-
-- Used for archiving purposes.
-- Provides fast data retrieval but at a higher cost.
-- Works well for archived data that requires immediate access
-- Can retrieve objects within a few milliseconds
-
-**S3 Glacier Flexible Retrieval:**
-
-- Low-cost storage designed for data archiving
-- Able to retrieve objects within a few minutes to hours
-
-**S3 Glacier Deep Archive:**
-
-- Lowest-cost archival storage class.
-- Suitable for long-term archiving and rarely accessed data.
-- Provides data retrieval within 12 to 48 hours.
-
-**S3 Outposts:**
-
-- S3 run on-premises using AWS Outposts service.
-- Provides access to AWS services in your local data center.
-- Offers local storage to keep storage costs low.
-
-<aside>
-💡 Amazon S3 Transfer Acceleration helps to read and write data to Amazon S3 over long geographic distances with low latency.
-</aside>
-
-
-## S3 pricing is based on four factors
-
-1. Total amount of data (in GB) stored on S3
-2. Storage class (S3 Standard, S3 Intelligent-Tiering, S3 Standard-Infrequent Access, S3 One Zone-IA, S3 Glacier, or S3 Glacier Deep Archive)
-3. Amount of data transferred out of AWS from S3
-4. Number of requests to S3
+- **S3 pricing is based on four factors**
+    - Total amount of data (in GB) stored on S3
+    - Storage class (S3 Standard, S3 Intelligent-Tiering, S3 Standard-Infrequent Access, S3 One Zone-IA, S3 Glacier, or S3 Glacier Deep Archive)
+    - Amount of data transferred out of AWS from S3
+    - Number of requests to S3
+- **Amazon S3 Policies**
+    ![Image8](./images/img8.png)
+    - **Action**: Specifies S3 operations that are allowed or denied (e.g. s3:PutObject, s3:GetObject)
+    - **Effect**: Indicates the permission decision; usually takes the values "Allow" or "Deny"
+    - **Resource**: Identifies the S3 resources (bucket or object) to which permission is applied or not
+    - **Principal**: Specifies the AWS accounts or users to which the permission policy applies
+    - **Sid (Optional)**: Includes an optional statement ID to differentiate between your statements
+    - **Condition (Optional)**: Specifies the circumstances under which the policy grants permission
 
 
 
-## Amazon S3 Policies
 
-![Image8](./images/img8.png)
+## Amazon EBS vs Amazon S3
+- **Block Storage Vs Object Storage**
+    - **Block Storage**
+        - Breaks files into smaller parts (blocks) and stores them separately
+        - Each block can be modified independently, enabling partial updates instead of re-uploading the entire file
+    - **Object Storage**
+        - Treats each file as a complete, discrete object
+            - If any change is made to an object, the entire file must be re-uploaded
+        - Ideal for storing documents, images, and videos that are uploaded and accessed as whole objects
+- **Amazon EBS (Uses Block Storage)**
+    -  Example: You have an 80-gigabyte video file that you're making edit corrections on.for that 80-gigabyte file, when you make an edit to one scene in the film and save that change, the engine only updates the blocks where those bits live.  If you were using S3, every time you saved the changes, the system would have to upload all 80 gigabytes, the whole thing, every time.
+- **Amazon S3 (Uses Object Storage)**
+    - Example: Suppose you're running a photo analysis website where users upload a photo of themselves, and your application finds the animals that look just like them. You have potentially millions of animal pictures that all need to be indexed and possibly viewed by thousands of people at once.  
 
-- **Action***: Specifies S3 operations that are allowed or denied (e.g. s3:PutObject, s3:GetObject).
-- **Effect***: Indicates the permission decision; usually takes the values "Allow" or "Deny".
-- **Resource**: Identifies the S3 resources (bucket or object) to which permission is applied or not.
-- **Principal**: Specifies the AWS accounts or users to which the permission policy applies.
-- **Sid (Optional)** – Include an optional statement ID to differentiate between your statements.
-- **Condition (Optional)** – Specify the circumstances under which the policy grants permission.
 
+
+
+          
 ## Amazon Relational Database Service (RDS)
-
 - Managed Databases
 - **Multiple Database Engines:** It supports various database engines like MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB.
 - **Automated Backups:** enabling point-in-time recovery.
@@ -475,28 +476,33 @@
 - AWS managed Amazon Relational Database Service (Amazon RDS) instance performance is better than a customer managed database instance
 
 **AWS is responsible for:**
-
 - Managing the underlying infrastructure and foundation services.
 - Managing the operating system.
 - Database setup.
 - Patching and backups.
 
 **The customer is still responsible for:**
-
 - Protecting the data stored in databases (through encryption and IAM access control).
 - Managing the database settings that are specific to the application.
 - Building the relational schema.
 - Network traffic protection.
 
-## AWS Database Migration Service (DMS)
 
+
+
+
+## AWS Database Migration Service (DMS)
 - AWS DMS allows you to easily move your databases to the AWS cloud, from AWS to other platforms, or between different database types.
 - Supports both heterogeneous (e.g., Oracle to MySQL) and homogeneous (e.g., MySQL to MySQL) database migrations.
 - It allows you to migrate with minimal interruption by ensuring that your source database continues to operate during migration.
 - It also facilitates data synchronization between the source and target database by continuously replicating database data.
 - When used with AWS Schema Conversion Tool, it helps you automatically convert database schemas from one database platform to another.
 
-## **AWS Identity and Access Management (IAM)**
+
+
+
+
+## AWS Identity and Access Management (IAM)
 
 IAM gives you the flexibility to configure access based on your company’s specific operational and security needs. You do this by using a combination of IAM features, which are explored in detail in this lesson:
 
