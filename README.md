@@ -586,10 +586,31 @@
 
 
 ## Additional Database Services
-- 
+- **Amazon DocumentDB**
+    - Fully managed **document** database compatible with MongoDB
+    - Best for applications that need flexible, JSON-like document storage
+- **Amazon Neptune**
+    - Fully managed **graph** database designed for highly connected data
+    - Ideal for recommendation engines, fraud detection, and knowledge graphs
+- **Amazon QLDB (Quantum Ledger Database)**
+    - Ledger database that keeps an immutable history of changes
+    - Best for financial transactions, auditing, and tracking data changes
+- **Amazon Managed Blockchain**
+    - Service for creating and managing blockchain networks
+    - Eliminates the need for a central authority in transactions
+- **Amazon ElastiCache**
+    - Caching service that speeds up database queries
+    - Supports Redis & Memcached for low-latency access to frequently used data
+- **Amazon DynamoDB Accelerator (DAX)**
+    - In-memory **caching** for DynamoDB, reducing response times from milliseconds to microseconds
+    - Ideal for high-performance applications needing real-time access to data
+
+
+
+
+      
 ## AWS Identity and Access Management (IAM)
 - IAM gives you the flexibility to configure access based on your company’s specific operational and security needs. You do this by using a combination of IAM features, which are explored in detail in this lesson:
-
 - IAM users, groups, and roles
 - IAM policies
 - Multi-factor authentication
