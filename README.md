@@ -363,7 +363,7 @@
     - A **disk** storage that is **physically** attached to the **host** computer the EC2 instance is running on, and therefore has the **same** lifespan as the instance
     - When the instance is terminated, you **lose** any data in the instance store
     - Best for temporary data 
-- **Amazon Elastic Block Store (EBS)**
+- **Amazon Elastic Block Store (EBS):**
     - Provides **block-level** storage volumes that you can use with Amazon EC2 instances
     - If you stop or terminate an Amazon EC2 instance, all the data on the attached EBS volume remains available
     - Because EBS volumes are for data that needs to **persist**, it’s important to **back up** the data on **seperate** drives from the local instance
@@ -378,12 +378,11 @@
 
 
 ## Amazon Simple Storage Service (Amazon S3)
-- An AWS service that offers object level storage
-    - Object Level Storage
-        - Each object consists of
-            - **Data**: Might be an image, video, text document, or any other type of file
-            - **Metadata**: Contains information about what the data is, how it is used, the object size, and so on
-            - **Key**: Its unique identifier
+- An AWS service that offers **object level** storage
+    - In Object Level Storage, each object consists of
+        - **Data**: Might be an image, video, text document, or any other type of file
+        - **Metadata**: Contains information about what the data is, how it is used, the object size, and so on
+        - **Key**: Its unique identifier
 - S3 stores data as objects in **buckets**
     - Maximum size for an object in Amazon S3 is **5 TB**
 - S3 offers unlimited storage space
@@ -449,6 +448,7 @@
 
 
 
+
 ## Amazon EBS vs Amazon S3
 - **Block Storage Vs Object Storage**
     - **Block Storage**
@@ -466,45 +466,129 @@
 
 
 
-          
+
+## Amazon Elastic File Storage (EFS)
+- **File Storage**
+    - In file storage, multiple clients (such as users, applications, servers, and so on) can access data that is stored in shared file folders
+    - Compared to block storage and object storage, file storage is ideal for use cases in which a large number of services and resources need to access the same data at the same time
+- EFS is a scalable file system used with AWS Cloud services and on-premises resources
+- As you add and remove files, Amazon EFS grows and shrinks **automatically**
+    - It can scale on demand to petabytes without disrupting applications
+
+
+
+
+
+## EBS VS EFS
+- **EBS**
+    - Stores data in a single Availability Zone
+    - To attach an Amazon EC2 instance to an EBS volume, both the Amazon EC2 instance and the EBS volume must reside within the same Availability Zone
+    - It doesnot automatically grow and shrink based on demand
+- **EFS**
+    - It is a regional service --> It stores data in and across multiple Availability Zones
+    - The duplicate storage enables you to access data concurrently from all the Availability Zones in the Region where a file system is located
+
+
+
+
+      
 ## Amazon Relational Database Service (RDS)
-- Managed Databases
-- **Multiple Database Engines:** It supports various database engines like MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB.
-- **Automated Backups:** enabling point-in-time recovery.
-- **Scalability:** Easily scale compute and storage resources to handle increased demand.
-- **High Availability:** Multi-AZ deployment provides failover capability for enhanced availability.
-- AWS managed Amazon Relational Database Service (Amazon RDS) instance performance is better than a customer managed database instance
+- A service that enables you to run relational databases in the AWS Cloud
+    - It supports various database engines like MySQL, PostgreSQL, Oracle, Microsoft SQL Server, Amazon Aurora, MariaDB
+- Automates tasks such as hardware provisioning, database setup, patching, and backups, allowing to spend less time completing administrative tasks  
+- Provides **automated** backups, enabling point-in-time recovery
+- Can easily **scale** compute and storage resources to handle increased demand
+- Multi-AZ deployment provides **high availability**
+- **AWS is responsible for:**
+    - Managing the underlying infrastructure and foundation services
+    - Managing the operating system
+    - Database setup
+    - Patching and backups
+- **The customer is still responsible for:**
+    - Protecting the data stored in databases (through encryption and IAM access control)
+    - Managing the database settings that are specific to the application
+    - Building the relational schema
+    - Network traffic protection
+- **Amazon Aurora**
+    - It is an enterprise-class relational database
+    - It is compatible with MySQL and PostgreSQL relational databases
+    - It is up to five times faster than standard MySQL databases and up to three times faster than standard PostgreSQL databases
+    - Consider Amazon Aurora if your workloads require **high availability**
+        - It replicates **six** copies of your data across **three** Availability Zones and continuously backs up your data to Amazon **S3** 
 
-**AWS is responsible for:**
-- Managing the underlying infrastructure and foundation services.
-- Managing the operating system.
-- Database setup.
-- Patching and backups.
-
-**The customer is still responsible for:**
-- Protecting the data stored in databases (through encryption and IAM access control).
-- Managing the database settings that are specific to the application.
-- Building the relational schema.
-- Network traffic protection.
 
 
 
 
+## Amazon DynamoDB
+- **NonRelational Databases**
+    - A nonrelational database stores and organizes data **without** using traditional rows and columns
+    - Also Known As: NoSQL databases
+    - Instead of tables with fixed schemas, they use flexible data models like:
+        - {Key,Value} Pairs: **Data** is stored as **keys** (items) and values (attributes/features)
+    - Can add or remove attributes from items in the table at any time
+    - Additionally, not every item in the table has to have the same attributes 
+- Amazon **DynamoDB** is a **key-value** database service
+- Provides single-digit **millisecond** performance at any scale
+- It is serverless, which means that you do not have to provision, patch, or manage servers
+- Supports automatic scaling based on demand without compromising performance 
 
+
+
+
+
+## RDS Vs DynamoDB
+- **RDS**
+    - Best for complex data relationships (e.g., sales supply chain management)
+    - Can handle **complex joins** across multiple tables 
+- **DynamoDB**
+    - Most real-world use cases don't require complex joins (e.g., simple look-up tables)
+        - Example: Employee contact list (names, phone numbers, emails, IDs) – a single-table structure
+    - Relational databases create unnecessary overhead when not using complex relationships
+    - DynamoDB eliminates this overhead, making it faster, more scalable, and cost-efficient
+
+
+
+
+      
+## Amazon RedShift
+- **Why Traditional Databases Struggle with Big Data & Analytics**
+    - Designed for **real-time**, high-speed transactions
+    - Struggle with historical analytics because data continuously grows 
+    - Limited in handling **diverse** data sources 
+    - Traditional databases can't efficiently run queries across multiple large datasets
+-  **The Need for Data Warehouses**
+    - Optimized for **historical data** analysis instead of real-time transactions
+    - Can handle massive, growing datasets and complex queries across multiple data sources
+    - Example:
+        - ✅ "Show me last hour’s sales across all stores" → Data Warehouse (historical)
+        - ❌ "How many coffee bags are in stock right now?" → Relational Database (operational)
+- **Amazon RedShift**
+    - Massively scalable (supports petabyte-scale storage)
+    - Redshift Spectrum: Query exabytes of unstructured data in S3 data lakes
+    - Up to 10x higher performance than traditional databases for business intelligence workloads
+    - Fully managed → Reduces operational overhead (scaling, tuning, maintenance)
+    - Easy to deploy → Start with a single API call
+
+
+
+
+      
 ## AWS Database Migration Service (DMS)
-- AWS DMS allows you to easily move your databases to the AWS cloud, from AWS to other platforms, or between different database types.
-- Supports both heterogeneous (e.g., Oracle to MySQL) and homogeneous (e.g., MySQL to MySQL) database migrations.
-- It allows you to migrate with minimal interruption by ensuring that your source database continues to operate during migration.
-- It also facilitates data synchronization between the source and target database by continuously replicating database data.
-- When used with AWS Schema Conversion Tool, it helps you automatically convert database schemas from one database platform to another.
+- AWS DMS allows you to easily move your databases to the AWS cloud, from AWS to other platforms, or between different database types
+- Supports both heterogeneous (e.g., Oracle to MySQL) and homogeneous (e.g., MySQL to MySQL) database migrations
+- It allows you to migrate with minimal interruption by ensuring that your source database continues to operate during migration
+- It enables developers to test applications against production data without affecting production users
+- It supports combining several databases into a single database
+- It sends ongoing copies of your data to other target sources instead of doing a one-time migration
 
 
 
 
-
+## Additional Database Services
+- 
 ## AWS Identity and Access Management (IAM)
-
-IAM gives you the flexibility to configure access based on your company’s specific operational and security needs. You do this by using a combination of IAM features, which are explored in detail in this lesson:
+- IAM gives you the flexibility to configure access based on your company’s specific operational and security needs. You do this by using a combination of IAM features, which are explored in detail in this lesson:
 
 - IAM users, groups, and roles
 - IAM policies
