@@ -427,23 +427,13 @@
     - **S3 Outposts:**
         - Delivers object storage to your **on-premises** AWS Outposts environment
         - Works well for workloads with **local data residency requirements** that must satisfy demanding performance needs by keeping data close to on-premises applications
-
     ![Image6](./images/img6.png)
     ![Image7](./images/img7.png)
-
 - **S3 pricing is based on four factors**
     - Total amount of data (in GB) stored on S3
     - Storage class (S3 Standard, S3 Intelligent-Tiering, S3 Standard-Infrequent Access, S3 One Zone-IA, S3 Glacier, or S3 Glacier Deep Archive)
     - Amount of data transferred out of AWS from S3
     - Number of requests to S3
-- **Amazon S3 Policies**
-    ![Image8](./images/img8.png)
-    - **Action**: Specifies S3 operations that are allowed or denied (e.g. s3:PutObject, s3:GetObject)
-    - **Effect**: Indicates the permission decision; usually takes the values "Allow" or "Deny"
-    - **Resource**: Identifies the S3 resources (bucket or object) to which permission is applied or not
-    - **Principal**: Specifies the AWS accounts or users to which the permission policy applies
-    - **Sid (Optional)**: Includes an optional statement ID to differentiate between your statements
-    - **Condition (Optional)**: Specifies the circumstances under which the policy grants permission
 
 
 
@@ -609,44 +599,57 @@
 
 
       
+## AWS Shared Responsibility Model
+- **Customer** responsibilities as “security **in** the cloud
+    - The customer has complete control over their content
+    - They are responsible for managing which content you choose to store on AWS, which AWS services you use, and who has access to that content
+    - The customer also control how access rights are granted, managed, and revoked
+- **AWS** responsibilities as commonly referred to as “security **of** the cloud”
+    - AWS manages the security of the cloud, specifically the physical infrastructure that hosts your resources, which include:
+        - Physical security of data centers
+        - Hardware and software infrastructure
+        - Network infrastructure
+        - Virtualization infrastructure 
+![A10](./images/a10.jpg)
+
+
+
+
+
 ## AWS Identity and Access Management (IAM)
-- IAM gives you the flexibility to configure access based on your company’s specific operational and security needs. You do this by using a combination of IAM features, which are explored in detail in this lesson:
-- IAM users, groups, and roles
-- IAM policies
-- Multi-factor authentication
-1. **User**:
-    - Directly associated with an identity in an AWS account.
-    - It can directly access AWS services with its own access keys and passwords.
-    - Usually created for real people or applications.
-    - These users can be assigned specific permissions or certain policies can be applied to them.
-    - For example, you can create an AWS user for an application and give that user access only to the S3 bucket.
-2. **User Group**:
-    - Used to organize and manage multiple AWS users.
-    - Ideal for grouping users with common permissions.
-    - A policy or permission assigned to a group is automatically assigned to all users in that group.
-    - For example, if you want to give the same access permissions to all developers, you can group them in a single "Developer" group.
-3. **Role**:
-    - It is not directly associated with an ID or password, so it cannot be used to log in directly.
-    - It is used to transfer permissions to another AWS service or user for a certain period of time.
-    - It is frequently used to grant applications running on EC2 instances access to AWS services that these instances need.
-    - When an AWS service needs access to another service, a role is used to provide this access securely.
-    - For example, if you want an EC2 instance to write data to the S3 bucket, you can create a role for this EC2 instance and grant S3 write permissions to this role.
+- Enables you to manage **access** to AWS services and resources
+1. **Root User**:
+    - When you first **create an AWS account**, you begin with an identity known as the root user
+    - Accessed by signing in with the email address and password that you used to create your AWS account
+    - It has complete access to all the AWS services and resources in the account
+    - Do **not** use the root user for **everyday** tasks
+      ![A11](./images/a11.png)
+2. **IAM User**:
+    - Directly associated with an identity in an AWS account
+    - Usually created for real **people** or **applications**
+    - It consists of a **name** and **credentials**
+    - By default, when you create a new IAM user in AWS, it has **no** permissions associated with it
+    - To allow the IAM user to perform specific actions in AWS, you must grant the IAM user the necessary permissions
+    - Best Practice: Create **separate** IAM users for each individual who needs access to AWS. Even if multiple employees require the same level of access, each user should have their own IAM credentials. This enhances security
+3. **User Group**:
+    - It is a **collection** of IAM users
+    - When you assign an IAM policy to a group, all users in the group are granted permissions specified by the policy
+        - Ideal for grouping users with common permissions.
+    - For example, if you want to give the same access permissions to all developers, you can group them in a single "Developer" group
+4. **Role**:
+    - It is an **identity** that you can assume to gain **temporary access** to permissions
+    - It is not directly associated with an ID or password, so it cannot be used to log in directly
+    - Before an IAM user/application/service can assume an IAM role, they must be granted permissions to **switch** to the role
+    - When someone assumes an IAM role, they **abandon** all previous permissions that they had under a previous role and assume the permissions of the new role
+    - Best Practice: Ideal for situations in which access to services or resources needs to be granted temporarily, instead of long-term
+5. **IAM Policies**
+    -  Defines **permissions** for users, groups, and roles
+    -  They determine **who** can perform **what** actions on **which** AWS resources
 
 
-## Root User
-
-- Create, manage, and close AWS accounts.
-- Create and manage IAM (Identity and Access Management) users and groups.
-- Create and manage IAM roles.
-- Provide full access to all AWS services and resources.
-- Manage billing, payments, and account details.
-- Modify security settings and IAM policies.
-- Manage security and auditing services like AWS CloudTrail and AWS Config.
-- Change account name
 
 
 ## AWS Artifact
-
 - AWS Artifact aims to provide access to **security and compliance documentation** and reports for AWS accounts. You can use these documents to support security controls and compliance requirements.
 - AWS Soc & PCI reports download
 
