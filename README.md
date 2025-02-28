@@ -649,51 +649,105 @@
 
 
 
+## AWS Organizations
+-  A **central** location to manage **multiple** AWS accounts
+-  When you create an organization, AWS Organizations automatically creates a **root**, which is the parent container for all the accounts in your organization
+-  Allows you to **centrally control permissions** for the accounts in your organization by using **service control policies** (SCPs)
+    -  SCPs enable you to place restrictions on the AWS services, resources, and individual API actions that users and roles in each account can access
+    -  You can apply SCPs to the organization root, an individual member account, or an OU
+        -  An SCP affects all IAM users, groups, and roles within an account, including the AWS account root user
+    -  You can apply IAM policies to IAM users, groups, or roles. You **cannot** apply an IAM policy to the AWS account root user
+- Allows you to **group accounts** into **organizational units** (OUs)
+    - This makes it easier to manage accounts with **similar** business or security requirements
+    - When you apply a policy to an OU, all the accounts in the OU automatically inherit the permissions specified in the policy
+
+
+
+
 ## AWS Artifact
-- AWS Artifact aims to provide access to **security and compliance documentation** and reports for AWS accounts. You can use these documents to support security controls and compliance requirements.
-- AWS Soc & PCI reports download
+- Depending on your company’s industry, you may need to **uphold specific standards**
+    - An audit or inspection will ensure that the company has met those standards
+- AWS Artifact is a service that provides on-demand access to **AWS security and compliance reports** and select online agreements
+- AWS Artifact consists of two main sections:
+    - **AWS Artifact Agreements**
+        - Allows you to **review, accept, and manage agreements** for an individual account and for all the accounts in an AWS Organization
+        - Example Use: When your company needs to sign an agreement with AWS regarding your use of certain types of information throughout AWS services
+    - **AWS Artifact Reports**
+        -  Provides **compliance reports** from third-party auditors
+            -  These auditors have tested and verified that AWS is compliant with a variety of global, regional, and industry-specific security standards and regulations
+        - Example Use: When a member of your company’s development team is building an application and needs more information about their responsibility for complying with certain regulatory standards. You can advise them to access this information in AWS Artifact Reports
+- **Customer Compliance Center**
+    - Allows you to read customer compliance stories to discover how companies in regulated industries have solved various compliance, governance, and audit challenges
+ 
 
 
-## AWS GuardDuty
 
-- GuardDuty is used to automatically detect **malicious activities and threats** in your AWS accounts.
-- Monitors security threats using **anomaly-based detection** techniques and provides **real-time** alerts.
-- Can detect threats such as identity theft, network attacks and behavioral analysis.
-- Quickly detects potential threats with threat data and behavioral analysis.
+
+## Denial-Of-Service Attacks
+- A deliberate attempt to make a website or application **unavailable** to users
+- The attack originates from a **single** source
+- Example: An attacker might flood a website or application with excessive network traffic until the targeted website or application becomes overloaded and is no longer able to respond. If the website or application becomes unavailable, this denies service to users who are trying to make legitimate requests
+- **Distributed Denial-Of-Service Attacks (DDoS)**
+    -  The attack originates from **multiple** sources
+    -  Multiple sources are used to start an attack that aims to make a website or application unavailable
+    -  This can come from a group of attackers, or even a single attacker. The single attacker can use multiple infected computers (also known as “bots”) to send excessive traffic to a website or application
+
+
+
 
 
 ## AWS Shield
+- A service that **protects** applications against **DDoS** attacks
+- AWS Shield provides two levels of protection:
+    - **Standard**
+        - Automatically protects all AWS customers at **no** cost
+        - It protects your AWS resources from the most common, frequently occurring types of DDoS attacks
+    - **Advanced**
+        - A **paid** service that provides detailed attack diagnostics and the ability to detect and mitigate sophisticated DDoS attacks
+        - Can integrate AWS Shield with AWS WAF by writing custom rules to mitigate complex DDoS attacks
 
-- Prevents DDOS attack
-- AWS Shield which protects against Distributed Denial of Service (DDoS) attacks is available globally on Amazon CloudFront Edge Locations.
-- Amazon EC2, Elastic Load Balancing (ELB), Amazon CloudFront, Amazon Route 53, AWS Global Accelerator provide automatic ddos protection.
 
-## AWS WAF
 
-- Web Application Protection
-- Rule Creation
-- Rate Limiting
-- Managed Rules
-- Real-time Metric
-- Global Reach
-- Block IP Addresses
-- SQL Injection
-- Provides protection at Layer 7
+
+
+## Additional Security Services 
+- **AWS Key Management Service (AWS KMS)**
+    - We need to ensure that the application's data is secure while in storage (**encryption at rest**) and while it is transmitted, (**encryption in transit**)
+    - AWS KMS enables you to perform encryption operations through the use of **cryptographic keys**
+        - A cryptographic key is a random string of digits used for locking (encrypting) and unlocking (decrypting) data
+    - With AWS KMS, you can **control key access** by specifying which IAM users and roles can manage them
+        - You can also temporarily disable keys to prevent their use
+- **AWS WAF**
+    - A **web application firewall** that lets you **monitor** network requests that come into your web applications
+    - Uses a web access control list (ACL) to protect your AWS resources
+    - When a request comes into AWS WAF, it checks against the list of rules that you have configured in the web ACL
+    - Here's an example
+      ![A12](./images/a12.png)
+- **Amazon Inspector**
+    - Allows you to perform automated **security assessments**
+    - It checks applications for security vulnerabilities and deviations from **security best practices**
+    - After Amazon Inspector has performed an assessment, it provides you with a **list** (prioritized by severity level) of security **findings**
+    - Also provides a detailed description of each security issue and a recommendation for how to fix it
+        - However, AWS does not guarantee that following the provided recommendations resolves every potential security issue
+  - **Amazon GuardDuty**
+   - A service that provides intelligent threat detection for your AWS infrastructure and resources
+   - After you have enabled GuardDuty for your AWS account, GuardDuty begins monitoring your network and account activity
+   - If GuardDuty detects any threats, you can review detailed findings about them from the AWS Management Console
+   - Findings include recommended steps for remediation
+       - You can also configure AWS Lambda functions to take remediation steps automatically in response to GuardDuty’s security findings
+  
+      
+
+
 
 ## Layers
-
 - **Layer 3** - Layer 3 is the Network layer and this layer decides which physical path data will take when it moves on the network. AWS Shield offers protection at this layer.
 - **Layer 4** - Layer 4 is the Transport layer and this layer data transmission occurs using TCP or UDP protocols. AWS Shield offers protection at this layer.
-- **Layer 7 -** HTTP and HTTPS requests are part of the Application layer, which is layer 7.
+- **Layer 7** - HTTP and HTTPS requests are part of the Application layer, which is layer 7.
 
-## Customer Compliance Center
 
-- AWS answers to key compliance questions
-- An overview of AWS risk and compliance
-- An auditing security checklist
 
 ## Amazon CloudWatch
-
 - Monitoring and management service for AWS resources.
 - Collects and tracks metrics, logs, and events.
 - Provides insights into application and infrastructure performance.
@@ -702,14 +756,12 @@
 - CloudWatch Logs allows you to collect and store logs from your AWS infrastructure in a central location, Logs Streams represent source-based sequential streams of these logs. CloudWatch Logs Insights is a query and analysis tool that makes it easier for you to dive deeper into these logs and analyze them.
 
 ## AWS CloudTrail
-
 - Logging and auditing service for AWS accounts.
 - Records API calls and actions made within your account.
 - Provides a trail of events for security and compliance analysis.
 - Helps in tracking changes, identifying potential security risks, and troubleshooting.
 
 ## AWS Trusted Advisor
-
 - Provides best practice recommendations to help optimize your AWS resources.
 - Offers control in four categories: cost optimization, performance, security and fault tolerance.
 - Helps reduce operating costs, improve performance and keep systems safe.
@@ -720,31 +772,32 @@
 - Monitors service quotas and warns when they are exceeded.
 - Can monitor in real time and give suggestions.
 
-## AWS Billing Dashboard
 
+## AWS Billing Dashboard
 - Compare your current month-to-date balance with the previous month, and get a forecast of the next month based on current usage.
 - View month-to-date spending by service.
 - View Free Tier usage by service.
 - Access Cost Explorer and create budgets.
 - Purchase and manage Savings Plans.
 
-## AWS **Consolidated Billing**
 
+## AWS **Consolidated Billing**
 - One bill
 - Easy tracking
 - No extra fee
 - **Combined usage** – You can combine the usage across all accounts in the organization to share the volume pricing discounts, Reserved Instance discounts, and Savings Plans. This can result in a lower charge for your project, department, or company than with individual standalone accounts.
 
-## AWS Budgets
 
+## AWS Budgets
 - Monitoring and cost management service in AWS.
 - Helps track and manage spending on AWS resources.
 - Set custom spending limits and receive alerts when thresholds are reached.
 - Provides real-time insights into usage, costs, and forecasts.
 - Enables proactive cost control and optimization.
 
-## AWS Pricing Calculator
 
+
+## AWS Pricing Calculator
 - Online tool to estimate AWS service costs.
 - Helps plan and budget for AWS usage.
 - Offers a user-friendly interface to configure services and resources.
@@ -752,8 +805,9 @@
 - Allows comparison of different pricing options.
 - Aids in understanding potential expenses before deploying resources.
 
-## AWS Cost and Usage Report (CUR)
 
+
+## AWS Cost and Usage Report (CUR)
 - The **Cost and Usage Report** is your one-stop shop for accessing the most granular data about your AWS costs and usage. You can also load your cost and usage information into Amazon Athena, Amazon Redshift, AWS QuickSight, or a tool of your choice.
 - Access comprehensive AWS cost and usage information
 - Track your Amazon EC2 Reserved Instance (RI) usage
@@ -764,8 +818,9 @@
 - Helps you track, analyze and plan AWS costs.
 - Allows analysis by tags.
 
-## AWS Cost Explorer
 
+
+## AWS Cost Explorer
 - **Cost analysis and visualization tool in AWS.**
 - Provides detailed insights into AWS usage and spending.
 - Allows filtering and grouping of cost data based on various dimensions.
@@ -775,21 +830,20 @@
 - Monthly expenses can be visualized
 - Can calculate estimated expenses for 12 months with high accuracy
 
+
+
 ## AWS Support Plans
-
 ![Image9](./images/img9.png)
-
 ![Image10](./images/img10.png)
 
-### Basic Support
 
+### Basic Support
 - **Customer Service and Communities** - 24x7 access to customer service, [documentation](https://docs.aws.amazon.com/), [whitepapers](https://aws.amazon.com/whitepapers/), and [AWS re:Post.](https://www.repost.aws/)
 - **[AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/)** Access to core Trusted Advisor [checks](https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor-check-reference.html) and guidance to provision your resources following best practices to increase performance and improve security.
 - **[AWS Personal Health Dashboard](https://aws.amazon.com/premiumsupport/technology/personal-health-dashboard/)** - A personalized view of the health of AWS services, and alerts when your resources are impacted.
 - No Technical support
 
 ### Developer Support
-
 - Best practice guidance
 - Client-side diagnostic tools
 - Building-block architecture support, which consists of guidance for how to use AWS offerings, features, and services together
@@ -797,7 +851,6 @@
 - Technical support through Chat
 
 ### Business Support
-
 - Use-case guidance to identify AWS offerings, features, and services that can best support your specific needs
 - All AWS Trusted Advisor checks
 - Limited support for third-party software, such as common operating systems and application stack components
@@ -807,7 +860,6 @@
 - Technical support through phone calls
 
 ### Enterprise On-Ramp Support
-
 - A pool of Technical Account Managers to provide proactive guidance and coordinate access to programs and AWS experts
 - A Cost Optimization workshop (one per year)
 - A Concierge support team for billing and account assistance
@@ -819,7 +871,6 @@
 
 
 ### Enterprise Support
-
 - A designated Technical Account Manager to provide proactive guidance and coordinate access to programs and AWS experts
 - A Concierge support team for billing and account assistance
 - Operations Reviews and tools to monitor health
@@ -834,8 +885,8 @@
 - Enfrastructure Event Management (IEM) 
 
 
-## Infrastructure Event Management (IEM)
 
+## Infrastructure Event Management (IEM)
 - AWS's dedicated support service for large-scale events or application launches.
 - AWS support engineers work closely to support the customer's AWS infrastructure in the planning, preparation and operation phases.
 - Assists in scaling, configuring and optimizing infrastructure to maximize the success of the event.
@@ -843,8 +894,9 @@
 - Designed specifically for launches of critical workloads or major promotions and events.
 
 
-## Technical Account Manager (TAM)
 
+
+## Technical Account Manager (TAM)
 - Dedicated technical advisor in AWS.
 - Offers personalized support and guidance for strategic accounts.
 - Helps with architectural design, optimization, and best practices.
@@ -854,17 +906,14 @@
 
 
 ## AWS Marketplace
-
 AWS Marketplace is a digital catalog that includes thousands of software listings from independent software vendors. You can use AWS Marketplace to find, test, and buy software that runs on AWS.
 
 
+
+
 ## AWS Cloud Adoption Framework (CAF)
-
 ![Image11](./images/img11.png)
-
 ![Image12](./images/img12.png)
-
-
 1. **Business Perspective:**
      - Purpose: Understand how business value is created and determine how cloud adoption contributes to the organization's business goals.
      - Focus Points: Business objectives, risk management, opportunities and ROI (return on investment).
@@ -894,65 +943,51 @@ AWS Marketplace is a digital catalog that includes thousands of software listing
      - Application management
 
 ## **6 strategies for migration**
-
 **Rehosting** 
-
 - Migrating applications to the Cloud as is, with minor changes.
 - Also known as "lift and shift."
 - Moving applications as-is to the cloud.
 - Minimal changes to the application.
 - Provides quick migration with minimal disruption.
-
 **Replatforming:**
-
 - Leveraging performance and scalability by integrating applications with the cloud. Code changes can also be made here.
 - Making some optimizations during migration.
 - Adapting applications to take advantage of cloud services.
 - May involve some code or configuration changes.
 - Improves application performance and scalability.
-
 **Refactoring/Re-architecting:**
-
 - Go cloud-native for maximum scalability. This involves extensive code and architectural changes.
 - Redesigning applications to be cloud-native.
 - Extensive code changes and architecture modifications.
 - Utilizes cloud services and modern best practices.
 - Offers maximum scalability, efficiency, and innovation.
-
 **Repurchasing:**
-
 - Replacing existing software with cloud alternatives. Manage applications with less hassle by creating SaaS.
 - Replacing existing software with cloud-based alternatives.
 - Adopting software-as-a-service (SaaS) solutions.
 - Requires minimal development effort.
 - Often results in improved features and reduced maintenance.
-
 **Retaining:**
-
 - Keeping existing applications in their current state because they are legacy.
 - Keeping certain applications in their current state.
 - Typically for applications not suitable for migration.
 - Could involve legacy or proprietary software.
-
 **Retiring:**
-
 - Gradually removing unneeded services to reduce operational load and budget.
 - Phasing out applications or services.
 - Discontinuing resources that are no longer needed.
 - Helps streamline operations and reduce costs.
 
+
+
 ## **AWS Snow Family Members**
-
 **AWS Snowcone:**
-
 - Small, rugged, and portable edge computing and data transfer device.
 - Designed for collecting, processing, and transporting data from remote or disconnected environments.
 - Suitable for scenarios with limited space and power constraints.
 - Provides data encryption and secure transfer to AWS.
 - It features 2 CPUs, 4 GB of memory, and up to 14 TB of usable storage.****
-
 **AWS Snowball:**
-
 - Data migration and transport device for large amounts of data.
 - Available in two sizes: Snowball and Snowball Edge.
 - Helps transfer data physically to and from AWS data centers.
@@ -961,17 +996,16 @@ AWS Marketplace is a digital catalog that includes thousands of software listing
 - Compute: 40 vCPUs, and 80 GiB
 - **Snowball Edge Storage Optimized ⇒** well suited for large-scale data migrations and recurring transfer workflows, in addition to local computing with higher capacity needs.
 - **Snowball Edge Compute Optimized ⇒** provides powerful computing resources for use cases such as machine learning, full motion video analysis, analytics, and local computing stacks.
-
 **AWS Snowmobile:**
-
 - Massive data migration solution for exabyte-scale datasets.
 - Uses a shipping container-sized data transfer truck.
 - Transfers large datasets to AWS securely and efficiently.
 - Designed for extremely large-scale data transfer needs.
 - You can transfer up to 100 petabytes of data per Snowmobile, a 45-foot long ruggedized shipping container, pulled by a semi trailer truck.****
 
-## AWS AI
 
+
+## AWS AI
 - Get code recommendations while writing code and identify security issues in your code with Amazon CodeWhisperer.
 - Convert speech to text with Amazon Transcribe.
 - Identify potentially fraudulent online activities with Amazon Fraud Detector.
