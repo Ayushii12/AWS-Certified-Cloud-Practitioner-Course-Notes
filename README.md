@@ -740,37 +740,41 @@
 
 
 
-## Layers
-- **Layer 3** - Layer 3 is the Network layer and this layer decides which physical path data will take when it moves on the network. AWS Shield offers protection at this layer.
-- **Layer 4** - Layer 4 is the Transport layer and this layer data transmission occurs using TCP or UDP protocols. AWS Shield offers protection at this layer.
-- **Layer 7** - HTTP and HTTPS requests are part of the Application layer, which is layer 7.
-
-
-
 ## Amazon CloudWatch
-- Monitoring and management service for AWS resources.
-- Collects and tracks metrics, logs, and events.
-- Provides insights into application and infrastructure performance.
-- Enables automated actions based on defined alarms.
-- Amazon CloudWatch logs are encrypted by default using AWS Key Management Service (KMS).
-- CloudWatch Logs allows you to collect and store logs from your AWS infrastructure in a central location, Logs Streams represent source-based sequential streams of these logs. CloudWatch Logs Insights is a query and analysis tool that makes it easier for you to dive deeper into these logs and analyze them.
+- A web service that enables you to collect, monitor and evaluate various metrics and then use these metrics to make decisions or take actions 
+- AWS services send metrics to CloudWatch. CloudWatch then uses these metrics to create graphs automatically that show how performance has changed over time
+- **CloudWatch alarms**:
+    - Can create alarms to get **notified** or perform **actions** if the value of a metric has gone above or below a predefined threshold
+- **CloudWatch **dashboard**:
+    - Enables you to access all the metrics for your resources from a single location
+    - For example, you can use a CloudWatch dashboard to monitor the CPU utilization of an Amazon EC2 instance, the total number of requests made to an Amazon S3 bucket, and more. You can even customize separate dashboards for different business purposes, applications, or resources.
+- **CloudWatch Logs**:
+    - Allows you to collect and store logs from your AWS infrastructure in a central location
+    - Logs Streams represent source-based sequential streams of these logs
+    - **CloudWatch Logs Insights**: A query and analysis tool that makes it easier for you to dive deeper into these logs and analyze them
+
+
+
+
 
 ## AWS CloudTrail
-- Logging and auditing service for AWS accounts.
-- Records API calls and actions made within your account.
-- Provides a trail of events for security and compliance analysis.
-- Helps in tracking changes, identifying potential security risks, and troubleshooting.
+- Enables you to view a complete **history** of user activity and API calls for your applications and resources
+- The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, and more
+- Events are typically updated in CloudTrail within **15 minutes** after an API call
+- Helps in tracking changes, identifying potential security risks, and troubleshooting
+- Within CloudTrail, you can also enable **CloudTrail Insights** to automatically detect **unusual API activities** in your AWS account
+
+
+
+
 
 ## AWS Trusted Advisor
-- Provides best practice recommendations to help optimize your AWS resources.
-- Offers control in four categories: cost optimization, performance, security and fault tolerance.
-- Helps reduce operating costs, improve performance and keep systems safe.
-- Provides the ability to directly perform suggested actions by clicking on specific suggestions.
-- Provides some basic checking for free for all AWS customers, but Business or Enterprise support plans may be needed for further advice.
-- Detects security vulnerabilities.
-- Helps you optimize your AWS accounts to reduce costs.
-- Monitors service quotas and warns when they are exceeded.
-- Can monitor in real time and give suggestions.
+- A web service that **inspects** your AWS environment and provides real-time recommendations in accordance with AWS best practices
+- Offers support in five categories: cost optimization, performance, security, fault tolerance and service limits
+- For the checks in each category, Trusted Advisor offers a list of recommended actions and additional resources to learn more about AWS best practices
+
+
+
 
 
 ## AWS Billing Dashboard
@@ -2015,9 +2019,13 @@ AWS OpsHub is a service that provides a user-friendly graphical user interface (
 
 Amazon QuickSight Q is a query service that is a component of Amazon QuickSight. QuickSight Q is a tool you can use to explore, analyze and query your data. This service has a user-friendly interface to help you better understand your data.
 
-## AWS Well-Architected Tool
-
-It helps customers evaluate compliance with best practices when designing, building, and operating their AWS infrastructure. This tool is designed based on the AWS Well-Architected framework.
+## Well-Architected Framework
+- A tool for evaluating architectural excellence across key categories. The framework is built on five pillars:
+    - Operational Excellence
+    - Security
+    - Reliability
+    - Performance Efficiency
+    - Cost Optimization
 
 ## Amazon Quantum Ledger Database (Amazon QLDB)
 
