@@ -777,37 +777,77 @@
 
 
 
-## AWS Billing Dashboard
-- Compare your current month-to-date balance with the previous month, and get a forecast of the next month based on current usage.
-- View month-to-date spending by service.
-- View Free Tier usage by service.
-- Access Cost Explorer and create budgets.
-- Purchase and manage Savings Plans.
+## AWS Free Tier
+- Enables you to begin using certain services without having to worry about incurring costs
+- Three types of offers are available:
+    - **Always Free**
+        - These offers do not expire and are available to all AWS customers
+        - For example, AWS Lambda allows 1 million free requests and up to 3.2 million seconds of compute time per month. Amazon DynamoDB allows 25 GB of free storage per month
+    - **12 Months Free**
+        - These offers are free for 12 months following your initial sign-up date to AWS
+        - For examples, specific amounts of Amazon S3 Standard Storage, thresholds for monthly hours of Amazon EC2 compute time, and amounts of Amazon CloudFront data transfer out 
+    - **Trials**
+        - Short-term free trial
+        - The length of each trial might vary by number of days or the amount of usage in the service
+        - For example, Amazon Inspector offers a 90-day free trial
 
 
-## AWS **Consolidated Billing**
-- One bill
-- Easy tracking
-- No extra fee
-- **Combined usage** – You can combine the usage across all accounts in the organization to share the volume pricing discounts, Reserved Instance discounts, and Savings Plans. This can result in a lower charge for your project, department, or company than with individual standalone accounts.
 
 
-## AWS Budgets
-- Monitoring and cost management service in AWS.
-- Helps track and manage spending on AWS resources.
-- Set custom spending limits and receive alerts when thresholds are reached.
-- Provides real-time insights into usage, costs, and forecasts.
-- Enables proactive cost control and optimization.
+
+## How AWS Pricing Works
+- Pay only for what you use
+- Pay less when you reserve
+    - Some services offer reservation options that provide a significant discount compared to On-Demand Instance pricing 
+- Pay less with volume based discounts
+    - i.e pay less when you use more
+    - For example, the more Amazon S3 storage space you use, the less you pay for it per GB 
+
+
 
 
 
 ## AWS Pricing Calculator
-- Online tool to estimate AWS service costs.
-- Helps plan and budget for AWS usage.
-- Offers a user-friendly interface to configure services and resources.
-- Provides cost breakdowns based on selected configurations.
-- Allows comparison of different pricing options.
-- Aids in understanding potential expenses before deploying resources.
+- Lets you create an **estimate** for the **cost** of your **use cases** on AWS
+- You can organize your AWS estimates by **groups** of your choice
+    - A group can reflect how your company is organized
+
+
+
+
+
+## Billing Dashboard
+- Used to
+    - Pay your AWS bill
+    - Monitor your usage
+        - Compare your current month-to-date balance with the previous month, and get a forecast of the next month based on current usage
+        - View month-to-date spend by service
+        - View Free Tier usage by service
+    - Analyze and control your costs
+    - Publish AWS Cost and Usage Reports
+
+
+
+
+
+## Consolidated Billing
+- **AWS Organizations**: A service that enables you to manage multiple AWS accounts from a central location
+    - The default maximum number of accounts allowed for an organization is 4, but you can contact AWS Support to increase your quota, if needed 
+- AWS Organizations also provides the option for consolidated billing enabling you to receive a single bill for all AWS accounts in the organization
+- By consolidating
+    - You can easily track the **combined costs** of all the linked accounts in your organization
+    - You can also review itemized charges incurred by **each** account
+        - This enables you to have greater transparency into your organization’s accounts while still maintaining the convenience of receiving a single monthly bill
+- Another benefit of consolidated billing is the ability to share bulk discount pricing, Savings Plans, and Reserved Instances across the accounts in your organization
+    - Some AWS services, like Amazon S3, offer tiered pricing—lower rates apply as usage increases
+    - Example Scenario
+        - Three separate AWS accounts transfer 2 TB, 5 TB, and 7 TB of Amazon S3 data
+        - Individually, none exceed the 10 TB threshold for discounted pricing
+        - When linked under consolidated billing, their combined usage (2 + 5 + 7 = 14 TB) qualifies for the discount
+        - AWS applies volume pricing across the organization and distributes the discount proportionally based on each account’s usage
+        - Account 3 (7 TB) benefits more than Account 1 (2 TB) or Account 2 (5 TB) since it contributed the most data transfer
+
+
 
 
 
