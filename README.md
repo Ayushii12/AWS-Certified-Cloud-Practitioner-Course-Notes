@@ -851,85 +851,99 @@
 
 
 
-## AWS Cost and Usage Report (CUR)
-- The **Cost and Usage Report** is your one-stop shop for accessing the most granular data about your AWS costs and usage. You can also load your cost and usage information into Amazon Athena, Amazon Redshift, AWS QuickSight, or a tool of your choice.
-- Access comprehensive AWS cost and usage information
-- Track your Amazon EC2 Reserved Instance (RI) usage
-- Leverage strategic data integrations
-- Usage and view the discounted RI rate
-- Used to analyze AWS costs and usage in detail.
-- Can create hourly detailed reports and store these reports in S3 bucket.
-- Helps you track, analyze and plan AWS costs.
-- Allows analysis by tags.
+## AWS Budgets
+- Enables you to **create budgets** in order to plan your service usage, service costs, and instance reservations
+- Can also set **custom alerts** when your usage exceeds (or is forecasted to exceed) the budgeted amount
+
+
 
 
 
 ## AWS Cost Explorer
-- **Cost analysis and visualization tool in AWS.**
-- Provides detailed insights into AWS usage and spending.
-- Allows filtering and grouping of cost data based on various dimensions.
-- Offers historical and forecasted cost information.
-- Helps in optimizing costs and making informed decisions.
-- **Comments about the future by looking at the past.**
-- Monthly expenses can be visualized
-- Can calculate estimated expenses for 12 months with high accuracy
+- A tool that lets you **visualize, understand, and manage your AWS costs** and usage over time
+- AWS Cost Explorer includes a default **report** of the costs and usage for your top five cost-accruing AWS services
+    - You can apply custom filters and groups to analyze your data
+-  Offers historical and forecasted cost information
+-  Also provides comments about the future by looking at the pas
+
+
 
 
 
 ## AWS Support Plans
+### Basic Support
+- Free for all the AWS Users
+- **Customer Service and Communities:** 24x7 access to customer service, [documentation](https://docs.aws.amazon.com/), [whitepapers](https://aws.amazon.com/whitepapers/), and [AWS re:Post](https://www.repost.aws/)
+- **[AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/):** Access to limited [Trusted Advisors](https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor-check-reference.html) and guidance to provision your resources following best practices to increase performance and improve security
+- **[AWS Personal Health Dashboard](https://aws.amazon.com/premiumsupport/technology/personal-health-dashboard/):** A personalized view of the health of AWS services, and alerts when your resources are impacted
+- **Apart from basic, AWS offers 4 different Support plans to help you troubleshoot issues:**
+    - Developer
+    - Business
+    - Enterprise On-Ramp
+    - Enterprise  
+### 1. Developer Support
+- Offers following features:
+    - Best practice guidance
+    - Client-side diagnostic tools
+    - Building-block architecture support, which consists of guidance for how to use AWS offerings, features, and services together
+- Technical support within business days (12 hour response time)
+- Technical support through Chat
+### 2. Business Support
+- Offers following features:
+    - Use-case guidance to identify AWS offerings, features, and services that can best support your specific needs
+    - **All** AWS Trusted Advisor checks
+    - Limited support for third-party software, such as common operating systems and application stack components
+- Technical support with 24/7 phone and email access (1 hour response time)
+- Unlimited access to AWS Consultants
+### 3. Enterprise On-Ramp Support
+- Offers following features:
+    - A pool of Technical Account Managers (TAMs) to provide proactive guidance and coordinate access to programs and AWS experts
+    - A Cost Optimization workshop (one per year)
+    - A Concierge support team for billing and account assistance
+    - Tools to monitor costs and performance through Trusted Advisor and Health API/Dashboard
+- Also provides access to a specific set of proactive support services provided by a **pool** of Technical Account Managers
+    - Consultative review and architecture guidance (one per year)
+    - Infrastructure Event Management support (one per year)
+    - Support automation workflows
+    - 30 minutes or less response time for business-critical issues
+### 4. Enterprise Support
+- Offers following features:
+    - A **designated** Technical Account Manager to provide proactive guidance and coordinate access to programs and AWS experts
+    - A Concierge support team for billing and account assistance
+    - Operations Reviews and tools to monitor health
+    - Training and Game Days to drive innovation
+    - Tools to monitor costs and performance through Trusted Advisor and Health API/Dashboard
+- Also provides access to a specific set of proactive support services provided by a **designated** Technical Account Manager
+    - Consultative review and architecture guidance
+    - Infrastructure Event Management support
+    - Cost Optimization Workshop and tools
+    - Support automation workflows
+    - 15 minutes or less response time for business-critical issues
+### Technical Account Manager (TAM)
+- Is your **primary** point of contact at AWS
+- TAMs provide expert engineering guidance, help you design solutions that efficiently integrate AWS services, assist with cost-effective and resilient architectures, and provide direct access to AWS programs and a broad community of experts
+- For example, suppose that you are interested in developing an application that uses several AWS services together. Your TAM could provide insights into how to best use the services together. They achieve this, while aligning with the specific needs that your company is hoping to address through the new application
+  
 ![Image9](./images/img9.png)
 ![Image10](./images/img10.png)
 
 
-### Basic Support
-- **Customer Service and Communities** - 24x7 access to customer service, [documentation](https://docs.aws.amazon.com/), [whitepapers](https://aws.amazon.com/whitepapers/), and [AWS re:Post.](https://www.repost.aws/)
-- **[AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/)** Access to core Trusted Advisor [checks](https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor-check-reference.html) and guidance to provision your resources following best practices to increase performance and improve security.
-- **[AWS Personal Health Dashboard](https://aws.amazon.com/premiumsupport/technology/personal-health-dashboard/)** - A personalized view of the health of AWS services, and alerts when your resources are impacted.
-- No Technical support
-
-### Developer Support
-- Best practice guidance
-- Client-side diagnostic tools
-- Building-block architecture support, which consists of guidance for how to use AWS offerings, features, and services together
-- Technical support within business days (12 hour response time)
-- Technical support through Chat
-
-### Business Support
-- Use-case guidance to identify AWS offerings, features, and services that can best support your specific needs
-- All AWS Trusted Advisor checks
-- Limited support for third-party software, such as common operating systems and application stack components
-- Technical support with 24/7 phone and email access (1 hour response time)
-- Unlimited access to AWS Consultants
-- AWS Business Priority Support Plan (ISM)
-- Technical support through phone calls
-
-### Enterprise On-Ramp Support
-- A pool of Technical Account Managers to provide proactive guidance and coordinate access to programs and AWS experts
-- A Cost Optimization workshop (one per year)
-- A Concierge support team for billing and account assistance
-- Tools to monitor costs and performance through Trusted Advisor and Health API/Dashboard
-- Consultative review and architecture guidance (one per year)
-- Infrastructure Event Management support (one per year)
-- Support automation workflows
-- 30 minutes or less response time for business-critical issues
-
-
-### Enterprise Support
-- A designated Technical Account Manager to provide proactive guidance and coordinate access to programs and AWS experts
-- A Concierge support team for billing and account assistance
-- Operations Reviews and tools to monitor health
-- Training and Game Days to drive innovation
-- Tools to monitor costs and performance through Trusted Advisor and Health API/Dashboard
-- Consultative review and architecture guidance
-- Infrastructure Event Management support
-- Cost Optimization Workshop and tools
-- Support automation workflows
-- 15 minutes or less response time for business-critical issues
-- Technical Account Manager (TAM)
-- Enfrastructure Event Management (IEM) 
 
 
 
+## AWS Marketplace 
+- A **digital catalog** that includes thousands of software listings from independent software vendors
+- You can use AWS Marketplace to find, test, and buy software that runs on AWS
+- For each listing in AWS Marketplace, you can access detailed information on pricing options, available support, and reviews from other AWS customers
+- You can also explore software solutions by industry and use case
+    - For example, suppose your company is in the healthcare industry. In AWS Marketplace, you can review use cases to implement solutions to protect patient records or using machine learning models to analyze a patient’s medical history and predict possible health risks
+- AWS Marketplace offers products in several categories, such as:
+    - Infrastructure Software, DevOps, Data Products, Professional Services, Business Applications, Machine Learning, Industries, and Internet of Things (IoT)
+
+
+
+
+      
 ## Infrastructure Event Management (IEM)
 - AWS's dedicated support service for large-scale events or application launches.
 - AWS support engineers work closely to support the customer's AWS infrastructure in the planning, preparation and operation phases.
