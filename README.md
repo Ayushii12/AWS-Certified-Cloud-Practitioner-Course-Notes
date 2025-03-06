@@ -970,116 +970,134 @@ AWS Marketplace is a digital catalog that includes thousands of software listing
 
 
 ## AWS Cloud Adoption Framework (CAF)
+- At the highest level, AWS CAF organizes guidance into **six** areas of focus, called **Perspectives**
+- Each Perspective addresses distinct responsibilities. The planning process helps the right people across the organization prepare for the changes ahead
+- In general
+    - **Business**, **People**, and **Governance** Perspectives focus on **business** capabilities
+    - **Platform**, **Security**, and **Operations** Perspectives focus on **technical** capabilities
+1. **Business Perspective:**
+     - Ensures that **IT investments** link to key **business results**
+     - Purpose: Determine how cloud adoption contributes to the organization's business goals
+     - Common roles: Business managers, Finance managers, Budget owners, Strategy stakeholders
+2. **People Perspective:**
+     - Ensures development of an organization-wide **change** management strategy for successful **cloud adoption**
+     - Purpose: Evaluate organizational structures and roles, new skill and process requirements, and identify gaps
+     - Focus Points: Training, defining new roles, building teams and continuing education and learning
+     - Common roles: Human resources, Staffing, People managers
+3. **Governance Perspective:**
+     - Ensures that IT strategy aligns with business strategy
+     - Purpose: Understand how to update the staff skills and processes to ensure business governance in the cloud
+     - Focus Points: Risk management, cost reduction, license management, compliance, process improvements and control mechanisms
+     - Common roles: Chief Information Officer (CIO), Program managers, Enterprise architects, Business analysts, Portfolio managers
+4. **Platform Perspective:**
+     - Includes **principles** and **patterns** for implementing **new** solutions on the cloud, and **migrating on-premises workloads** to the cloud
+     - Focus Points: Infrastructure design, service selection, architectural best practices and application migration
+     - Common roles: Chief Technology Officer (CTO), IT managers, Solutions architects
+5. **Security Perspective:**
+     - Ensures that the organization **meets security objectives** for visibility, auditability, control, and agility
+     - Focus Points: Identity and access management, data protection, network security and compliance requirements
+     - Common roles: Chief Information Security Officer (CISO), IT security managers, IT security analysts
+6. **Operations Perspective:**
+     - Helps you to enable, run, use, operate, and recover IT workloads to the level agreed upon with your business stakeholders
+     - Define how day-to-day, quarter-to-quarter, and year-to-year business is conducted
+     - Focus Points: Automation, monitoring, reporting, incident management, and continuous integration and continuous delivery (CI/CD) processes
+     - Common roles: IT operations managers, IT support managers
 ![Image11](./images/img11.png)
 ![Image12](./images/img12.png)
-1. **Business Perspective:**
-     - Purpose: Understand how business value is created and determine how cloud adoption contributes to the organization's business goals.
-     - Focus Points: Business objectives, risk management, opportunities and ROI (return on investment).
-2. **People Perspective:**
-     - Purpose: Aligning the organization's skills and capacities with cloud services.
-     - Focus Points: Training, defining new roles, building teams and continuing education and learning.
-3. **Governance Perspective:**
-     - Purpose: Aligning business processes and IT governance with cloud services.
-     - Focus Points: Risk management, cost reduction, license management, compliance, process improvements and control mechanisms.
-4. **Platform Perspective:**
-     - Purpose: Design and implement cloud infrastructure and architecture in line with business needs and objectives.
-     - Focus Points: Infrastructure design, service selection, architectural best practices and application migration.
-5. **Security Perspective:**
-     - Purpose: Meeting security and compliance requirements.
-     - Focus Points: Identity and access management, data protection, network security and compliance requirements.
-6. **Operations Perspective:**
-     - Purpose: To manage and operate cloud resources and services effectively and efficiently.
-     - Focus Points: Automation, monitoring, reporting, incident management, and continuous integration and continuous delivery (CI/CD) processes.
-     -Observability
-     - Event management (AIOps)
-     - Incident and problem management
-     - Change and release management
-     - Performance and capacity management
-     - Configuration management
-     - Patch management
-     - Availability and continuity management
-     - Application management
-
-## **6 strategies for migration**
-**Rehosting** 
-- Migrating applications to the Cloud as is, with minor changes.
-- Also known as "lift and shift."
-- Moving applications as-is to the cloud.
-- Minimal changes to the application.
-- Provides quick migration with minimal disruption.
-**Replatforming:**
-- Leveraging performance and scalability by integrating applications with the cloud. Code changes can also be made here.
-- Making some optimizations during migration.
-- Adapting applications to take advantage of cloud services.
-- May involve some code or configuration changes.
-- Improves application performance and scalability.
-**Refactoring/Re-architecting:**
-- Go cloud-native for maximum scalability. This involves extensive code and architectural changes.
-- Redesigning applications to be cloud-native.
-- Extensive code changes and architecture modifications.
-- Utilizes cloud services and modern best practices.
-- Offers maximum scalability, efficiency, and innovation.
-**Repurchasing:**
-- Replacing existing software with cloud alternatives. Manage applications with less hassle by creating SaaS.
-- Replacing existing software with cloud-based alternatives.
-- Adopting software-as-a-service (SaaS) solutions.
-- Requires minimal development effort.
-- Often results in improved features and reduced maintenance.
-**Retaining:**
-- Keeping existing applications in their current state because they are legacy.
-- Keeping certain applications in their current state.
-- Typically for applications not suitable for migration.
-- Could involve legacy or proprietary software.
-**Retiring:**
-- Gradually removing unneeded services to reduce operational load and budget.
-- Phasing out applications or services.
-- Discontinuing resources that are no longer needed.
-- Helps streamline operations and reduce costs.
 
 
 
-## **AWS Snow Family Members**
-**AWS Snowcone:**
-- Small, rugged, and portable edge computing and data transfer device.
-- Designed for collecting, processing, and transporting data from remote or disconnected environments.
-- Suitable for scenarios with limited space and power constraints.
-- Provides data encryption and secure transfer to AWS.
-- It features 2 CPUs, 4 GB of memory, and up to 14 TB of usable storage.****
-**AWS Snowball:**
-- Data migration and transport device for large amounts of data.
-- Available in two sizes: Snowball and Snowball Edge.
-- Helps transfer data physically to and from AWS data centers.
-- Suitable for offline data transfers and overcoming network limitations.
-- Storage: 80 TB
-- Compute: 40 vCPUs, and 80 GiB
-- **Snowball Edge Storage Optimized ⇒** well suited for large-scale data migrations and recurring transfer workflows, in addition to local computing with higher capacity needs.
-- **Snowball Edge Compute Optimized ⇒** provides powerful computing resources for use cases such as machine learning, full motion video analysis, analytics, and local computing stacks.
-**AWS Snowmobile:**
-- Massive data migration solution for exabyte-scale datasets.
-- Uses a shipping container-sized data transfer truck.
-- Transfers large datasets to AWS securely and efficiently.
-- Designed for extremely large-scale data transfer needs.
-- You can transfer up to 100 petabytes of data per Snowmobile, a 45-foot long ruggedized shipping container, pulled by a semi trailer truck.****
+
+
+## 6 R's Of Migration (Most Common Migration Strategies)
+1. **Rehosting** 
+    - Also known as **lift and shift**
+    - Migrating applications to the Cloud **as is**, with minor changes
+    - Provides quick migration with minimal disruption
+2. **Replatforming:**
+    - Also known as **lift, tinker, and shift**
+    - Involves making a few cloud optimizations (some code or configuration changes) to realize a tangible benefit
+    - Optimization is achieved **without** changing the **core architecture** of the application
+3. **Refactoring/Re-architecting:**
+    - Involves **reimagining** how an application is architected and developed using cloud-native features
+    - Driven by a **strong business need** (i.e adding features, scaling, or performance) that would otherwise be difficult to achieve in the **existing** environment
+    - Extensive code changes and architecture modifications
+4. **Repurchasing:**
+    - Replacing **existing software** with **cloud alternatives**
+    - Involves moving from a **traditional license** to a **SaaS model**
+    - For example, a business might choose to implement the repurchasing strategy by migrating from a customer relationship management (CRM) system to Salesforce.com
+5. **Retaining:**
+    - Involves **keeping** applications that are critical for the business in the **source** environment
+    - Includes applications that require **major refactoring** before they can be migrated, or, work that can be postponed until a later time
+    - For example, legacy or proprietary software
+6. **Retiring:**
+    - Gradually **removing** services that are **no longer needed** to reduce operational load and budget
+    - Helps streamline operations and reduce costs
 
 
 
-## AWS AI
-- Get code recommendations while writing code and identify security issues in your code with Amazon CodeWhisperer.
-- Convert speech to text with Amazon Transcribe.
-- Identify potentially fraudulent online activities with Amazon Fraud Detector.
-- Amazon Lex ⇒ Build voice and text chatbots
-- Amazon Polly ⇒ Text to Speech
-- Amazon Personalize ⇒ Allows developers to quickly build and deploy curated recommendations and intelligent user segmentation at scale using machine learning (ML).
-- AWS Rekognition ⇒ Computer Vision
-- Amazon **Comprehend** is a natural language processing (NLP) service offered by Amazon Web Services (AWS). This service analyzes text data, making it easy to gain in-depth information about content and use this data in various applications
-- **Amazon Kendra** is a machine learning-powered enterprise search service from AWS. This service allows companies to easily discover their content through natural language searches.
 
-## **The AWS Well-Architected Framework**
 
-![Image13](./images/img13.png)
+## AWS Snow Family 
+- A collection of **physical devices** that help to **physically transport** up to exabytes of data into and out of AWS
+- These devices offer different capacity points, and most include **built-in computing capabilities**
+1. **AWS Snowcone:**
+    - **Small, rugged, and portable** edge computing and data transfer device
+    - Designed for collecting, processing, and transporting data from remote/disconnected environments
+    - It features **2 CPUs**, **4 GB of memory**, and up to **14 TB of usable storage**
+2. **AWS Snowball:**
+    - Offers two types of devices:
+    - **Snowball Edge Storage Optimized devices**
+        - Well suited for large-scale data migrations and recurring transfer workflows
+        - Storage: 80 TB of hard disk drive (HDD) capacity for block volumes and Amazon S3 compatible object storage, and 1 TB of SATA SSD for block volumes
+        - Compute: 40 vCPUs, and 80 GiB of memory to support Amazon EC2 sbe1 instances (equivalent to C5)
+    - **Snowball Edge Compute Optimized devices**
+        - Provides powerful computing resources for use cases such as machine learning, full motion video analysis, analytics, and local computing stacks
+        - Storage: 80-TB usable HDD capacity for Amazon S3 compatible object storage or Amazon EBS compatible block volumes and 28 TB of usable NVMe SSD capacity for Amazon EBS compatible block volumes
+        - Compute: 104 vCPUs, 416 GiB of memory, and an optional NVIDIA Tesla V100 GPU. Devices run Amazon EC2 sbe-c and sbe-g instances, which are equivalent to C5, M5a, G3, and P3 instances
+3. **AWS Snowmobile:**
+    - An exabyte-scale data transfer service used to move large amounts of data to AWS
+    - You can transfer up to 100 petabytes of data per Snowmobile, a 45-foot long ruggedized shipping container, pulled by a semi trailer truck
+![A13](./images/a13.jpg)
 
+
+
+
+
+## Innovate with AWS
+- To drive innovation in the cloud, focus on the desired outcomes and clearly define the following:
+    - Current State 
+    - Desired State 
+    - Problems you are trying to Solve
+- **Serverless Applications**
+    - Definition: No need to provision, maintain, or manage servers—AWS handles fault tolerance and availability
+    - Example: AWS Lambda enables running code without managing a server fleet
+    - Benefit: Allows developers to focus on building products instead of infrastructure management
+- **Artifical Intelligence**
+    - AWS provides AI-powered services for various tasks, such as:
+        - Amazon **Transcribe**: Converts speech to text
+        - Amazon **Comprehend**: Analyzes text for patterns and sentiment
+        - Amazon F**raud Detector**: Detects potentially fraudulent activities
+        - Amazon **Lex**: Builds voice and text chatbots
+- **Machine Learning**  
+    - Challenges of Traditional ML: Complex, costly, and error-prone
+    - Solution: Amazon **SageMaker** streamlines the ML process—build, train, and deploy models efficiently
+    - Use Cases: Data analysis, solving complex problems, and predictive analytics
+- **Amazon Q Developer**
+    - A machine learning-powered **code generator** that offers real-time code recommendations
+    - Key Features:
+        - Real-Time Code Suggestions: Provides suggestions based on your code and comments as you write in your IDE
+        - Context-Aware: Analyzes surrounding code to ensure that suggestions match your style, naming conventions, and seamlessly integrate into the existing context
+    - Installation
+        - By downloading and installing the **AWS Toolkit extension** for their IDE
+        - Activate directly within the **AWS Lambda** and **AWS Cloud9** console code editors 
+
+
+
+
+
+## The AWS Well-Architected Framework
 ### Operational excellence
-
 - The operational excellence pillar includes the ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures.
 - Perform operations as code
 - Make frequent, small, reversible changes
@@ -1087,10 +1105,7 @@ AWS Marketplace is a digital catalog that includes thousands of software listing
 - Anticipate failure
 - Learn from all operational failures
 - IaaS
-
 ### Security
-
-
 - The security pillar includes the ability to protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies.
 - Implement a strong identity foundation
 - Enable traceability
@@ -1099,9 +1114,7 @@ AWS Marketplace is a digital catalog that includes thousands of software listing
 - Protect data in transit and at rest
 - Keep people away from data
 - Prepare for security events
-
 ### Reliability
-
 - The reliability pillar includes the ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as misconfigurations or transient network issues.
 - Recover from infrastructure or service disruptions
 - Dynamically acquire computing resources to meet demand
@@ -1111,26 +1124,20 @@ AWS Marketplace is a digital catalog that includes thousands of software listing
 - Increase aggregate system availability
 - Automatically recovering from failure
 - Stop guessing capacity
-
 ### Performance Efficiency
-
 - The performance efficiency pillar includes the ability to use computing resources efficiently to meet system requirements. Key topics include selecting the right resource types and sizes based on workload requirements, monitoring performance, and making informed decisions to maintain efficiency as business needs evolve.
 - Architecture includes experimenting more often
 - Using serverless architectures
 - Designing systems to be able to go global in minutes
 - Go global in minutes
 - Experiment more often
-
 ### Cost Optimization
-
 - The cost optimization pillar includes the ability to avoid or eliminate unneeded cost or sub-optimal resources.
 - Adopt a consumption model
 - Analyzing and attributing expenditure
 - Using managed services to reduce the cost of ownership
 - Implement cloud financial management
-
 ### Sustainability
-
 - The discipline of sustainability addresses the long-term environmental, economic, and societal impact of your business activities. Your business or organization can have negative environmental impacts like direct or indirect carbon emissions, unrecyclable waste, and damage to shared resources like clean water. When building cloud workloads, the practice of sustainability is understanding the impacts of the services used, quantifying impacts through the entire workload lifecycle, and applying design principles and best practices to reduce these impacts.
 - Understand your impact
 - Establish sustainability goals
@@ -1138,9 +1145,13 @@ AWS Marketplace is a digital catalog that includes thousands of software listing
 - Anticipate and adopt new, more efficient hardware and software offerings
 - Use managed services
 - Reduce the downstream impact of your cloud workloads
+![Image13](./images/img13.png)
+
+
+
+
 
 ## AWS Professional Services
-
 - AWS Professional Services provides consulting and support services to help customers achieve specific business outcomes using AWS's cloud services. This service offers bespoke consulting services to help businesses optimize their migration to AWS, build new solutions in accordance with best practice guidelines, and learn how to best use AWS infrastructure. In addition to public cloud adoption, AWS Professional Services contributes to several specialized practice areas for payment.
 
 ## AWS Concierge Support
