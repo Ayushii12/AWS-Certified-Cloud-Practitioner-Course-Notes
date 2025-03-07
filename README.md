@@ -1097,60 +1097,98 @@ AWS Marketplace is a digital catalog that includes thousands of software listing
 
 
 ## The AWS Well-Architected Framework
-### Operational excellence
-- The operational excellence pillar includes the ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures.
-- Perform operations as code
-- Make frequent, small, reversible changes
-- Refine operations procedures frequently
-- Anticipate failure
-- Learn from all operational failures
-- IaaS
-### Security
-- The security pillar includes the ability to protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies.
-- Implement a strong identity foundation
-- Enable traceability
-- Apply security at all layers
-- Automate security best practices
-- Protect data in transit and at rest
-- Keep people away from data
-- Prepare for security events
-### Reliability
-- The reliability pillar includes the ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as misconfigurations or transient network issues.
-- Recover from infrastructure or service disruptions
-- Dynamically acquire computing resources to meet demand
-- Mitigate disruptions such as misconfigurations or transient network issues
-- Testing recovery procedures
-- Scaling horizontally
-- Increase aggregate system availability
-- Automatically recovering from failure
-- Stop guessing capacity
-### Performance Efficiency
-- The performance efficiency pillar includes the ability to use computing resources efficiently to meet system requirements. Key topics include selecting the right resource types and sizes based on workload requirements, monitoring performance, and making informed decisions to maintain efficiency as business needs evolve.
-- Architecture includes experimenting more often
-- Using serverless architectures
-- Designing systems to be able to go global in minutes
-- Go global in minutes
-- Experiment more often
-### Cost Optimization
-- The cost optimization pillar includes the ability to avoid or eliminate unneeded cost or sub-optimal resources.
-- Adopt a consumption model
-- Analyzing and attributing expenditure
-- Using managed services to reduce the cost of ownership
-- Implement cloud financial management
-### Sustainability
-- The discipline of sustainability addresses the long-term environmental, economic, and societal impact of your business activities. Your business or organization can have negative environmental impacts like direct or indirect carbon emissions, unrecyclable waste, and damage to shared resources like clean water. When building cloud workloads, the practice of sustainability is understanding the impacts of the services used, quantifying impacts through the entire workload lifecycle, and applying design principles and best practices to reduce these impacts.
-- Understand your impact
-- Establish sustainability goals
-- Maximize utilization
-- Anticipate and adopt new, more efficient hardware and software offerings
-- Use managed services
-- Reduce the downstream impact of your cloud workloads
-![Image13](./images/img13.png)
+- It provides a way for you to consistently **measure** your **architecture** against **best practices** and design principles and identify areas for improvement
+- The Well-Architected Framework is based on **six** pillars
+1. **Operational excellence**
+    - Focuses on **running** and **monitoring** systems effectively to deliver business value while continuously improving processes and procedures
+    - Best practices:
+        - Treat operations as code
+        - Keep documentation up to date with annotations
+        - Anticipate and plan for failure
+        - Make frequent, small, and reversible changes
+2. **Security**
+    - The ability to **protect** information, systems, and assets while delivering business value through risk assessments and mitigation strategies
+    - Best practices:
+        - Apply security best practices where possible
+        - Apply security at **all layers**
+        - Ensure that data is protected both **in transit** and **at rest**
+3. **Reliability**
+    - System's ability to **recover** from **disruptions**, dynamically acquire **resources** to meet demand, and mitigate issues such as misconfigurations or network problems
+    - Best practices:
+        - **Test** and ensure your system can recover from infrastructure failures
+        - Use **horizontal scaling** to increase availability
+        - Implement automated recovery mechanisms for system failures
+4. **Performance Efficiency**
+    - The ability to use **computing** resources efficiently to meet system requirements and to maintain that efficiency as demand changes and technologies evolve
+    - Best practices:
+        - Regularly test and improve performance
+        - Leverage **serverless technologies** when appropriate
+        - Design systems to scale globally with minimal effort
+5. **Cost Optimization**
+    - The ability to run systems to deliver business value at the **lowest** price
+    - Best practices: 
+        - Adopt a **consumption-based** pricing model to pay only for what is used.
+        - Continuously analyze costs
+        - Use managed services to reduce the cost of ownership 
+6. **Sustainability**
+    - AWS introduced a sustainability pillar to promote better resource utilization and **lower environmental impacts**
+    - Best practices: 
+        - Assess the sustainability impact of your architecture
+        - Set and track sustainability goals for your project
+        - Maximize the utilization of your resources 
+        - Stay up-to-date with more efficient hardware and software options
+        - Use managed services to reduce the downstream environmental impact
 
 
 
 
 
+## Benefits of the AWS Cloud 
+- AWS Cloud offers many benefits over computing in **on-premises** or **hybrid** environments
+1. **Trade Upfront Expense for Variable Expense**
+    - Traditional IT infrastructure requires significant upfront investment in **data centers, physical servers, and other resources**  
+    - Cloud computing eliminates these upfront costs by enabling a **pay-as-you-go** model, where businesses only pay for the resources they consume
+2. **Benefit from Massive Economies of Scale**
+    - By using cloud computing, you can achieve a **lower pay-as-you-go prices** than you can get **on your own**
+    - Because usage from **hundreds of thousands of customers** aggregates in the cloud, AWS can achieve higher economies of scale
+3. **Stop Guessing Capacity**
+    - One of the biggest challenges in traditional IT infrastructure is predicting how much capacity is needed before deploying an application
+    - With cloud computing, businesses **scale resources up or down** as demand changes
+    - Services like **Amazon EC2** allow dynamic allocation of compute power, reducing both **over-provisioning** and **under-provisioning** risks
+    - This flexibility ensures **optimal cost and performance**
+4. **Increase Speed and Agility**
+    - Cloud computing accelerates **development and deployment** by providing:
+        - On-demand infrastructure that reduces the time required to **provision resources**
+        - More time for development teams to **experiment and innovate** without delays from hardware procurement
+        - The ability to **quickly iterate and deploy** new applications
+5. **Reduce Infrastructure Maintenance Costs**
+    - Running traditional **on-premises data centers** requires significant investment in **hardware, maintenance, and operational management**
+    - Cloud computing **eliminates** these concerns by:
+        - Shifting maintenance responsibilities to cloud providers
+        - Allowing teams to focus on **core applications and customer experience** instead of managing infrastructure
+6. **Go Global in Minutes**
+    - The **AWS Cloud** provides a global infrastructure that enables businesses to **deploy applications worldwide** with minimal effort
+    - Businesses can expand their reach to **global customers within minutes**, rather than dealing with complex international infrastructure setups
+
+
+
+
+
+
+## Exam Details
+- The AWS Certified Cloud Practitioner exam consists of **65 questions** to be completed in **90 minutes**
+- The **minimum** passing score is **700** (the maximum score is 1,000)
+- Two types of questions are included on the exam: multiple choice and multiple response (On the exam, there is **no** penalty for guessing)
+    - A **multiple-choice** question has one correct response and three incorrect responses, or distractors
+    - A **multiple-response** question has two or more correct responses out of five or more options
+- **Strategies**
+    - **Predict** the answer **before** looking at the options and then if your guess is in one of the options make sure to chcekc the other three are incorrect
+    - Use the proces of **elimination**
+
+
+
+
+   
 ## AWS Professional Services
 - AWS Professional Services provides consulting and support services to help customers achieve specific business outcomes using AWS's cloud services. This service offers bespoke consulting services to help businesses optimize their migration to AWS, build new solutions in accordance with best practice guidelines, and learn how to best use AWS infrastructure. In addition to public cloud adoption, AWS Professional Services contributes to several specialized practice areas for payment.
 
